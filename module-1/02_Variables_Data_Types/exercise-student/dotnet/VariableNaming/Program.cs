@@ -30,16 +30,23 @@
             3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
             many raccoons are left in the woods?
             */
+            int numberOfRaccoonsInWoods = 3;
+            int numberOfRaccoonsGoingHome = 2;
+            int numberOfRaccoonsRemaining = numberOfRaccoonsInWoods - numberOfRaccoonsGoingHome;
 
             /*
             4. There are 5 flowers and 3 bees. How many less bees than flowers?
             */
-
+            int flowers = 5;
+            int bees = 3;
+            int fewerBeesThanFlowers = flowers - bees;
             /*
             5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
             breadcrumbs, too. How many pigeons are eating breadcrumbs now?
             */
-
+            int pigeonEatingBreadcrumbs = 1;
+            int pigeonArriving = 1;
+            int pigeonEatingTotal = pigeonEatingBreadcrumbs + pigeonArriving;
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
             owls are on the fence now?
