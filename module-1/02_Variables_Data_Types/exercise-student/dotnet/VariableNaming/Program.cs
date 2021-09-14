@@ -168,7 +168,7 @@
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
-            const decimal iceCreamConePrice = .99m;
+            decimal iceCreamConePrice = .99m;
             decimal numberOfIceCreamCones = 2m;
             decimal totalCostofIceCreamCones = iceCreamConePrice * numberOfIceCreamCones;
 
@@ -177,48 +177,71 @@
             rocks to complete the border. She has 64 rocks. How many more rocks
             does she need to complete the border?
             */
-
+            int numberOfRocksForBorder = 125;
+            int numberOfRocksOfMrsHilt = 64;
+            int numberOfRocksNeeded = numberOfRocksForBorder - numberOfRocksOfMrsHilt;
             /*
             23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
             she have left?
             */
-
+            int numberOfMarblesOfMrsHilt = 38;
+            int numberOfMarblesLostHilt = 15;
+            numberOfMarblesOfMrsHilt -= numberOfMarblesLostHilt;
             /*
             24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
             miles and then stopped for gas. How many miles did they have left to drive?
             */
+            int concertDistance = 78;
+            int distanceTravelled = 32;
+            concertDistance -= distanceTravelled;
 
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
             much total time (in minutes) did she spend shoveling snow?
             */
-
+            int snowShovelingSaturdayMorningHours = 1;
+            int snowShovelingSaturdayMorningMinutes = 30;
+            int snowShovelingSaturdayAfternoonHours = 0;
+            int snowShovelingSaturdayAfternoonMinutes = 45;
+            int totalTimeSnowShovelingMinutes = (snowShovelingSaturdayMorningHours * 60) + (snowShovelingSaturdayMorningMinutes) + (snowShovelingSaturdayAfternoonHours * 60) + (snowShovelingSaturdayAfternoonMinutes);
             /*
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
             */
-
+            decimal priceOfHotDog = .50m;
+            decimal totalHotDogspurchased = 6m;
+            decimal totalCostofHotDogs = priceOfHotDog * totalHotDogspurchased;
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
             */
-
+            const decimal costOfPencil = .07M;
+            decimal totalMoney = .50M;
+            int numberOfPencilsAbleToPurchase = (int)(totalMoney / costOfPencil);
+            System.Console.WriteLine(numberOfPencilsAbleToPurchase);
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
             were red?
             */
-
+            int numberOfButterfliesSeen = 33;
+            int numberOfButterfliesOrange = 20;
+            int numberOfButterfliesRed = numberOfButterfliesSeen - numberOfButterfliesOrange;
             /*
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
             */
-
+            decimal moneyGivenToClerk = 1M;
+            decimal costOfCandy = .54M;
+            decimal changeReceived = moneyGivenToClerk - costOfCandy;
             /*
             30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
             will he have?
             */
+            int totalBackyardTrees = 13;
+            int treesPlanted = 12;
+            totalBackyardTrees += treesPlanted;
 
             /*
             31. Joy will see her grandma in two days. How many hours until she sees
