@@ -168,8 +168,8 @@
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
-            decimal iceCreamConePrice = .99m;
-            decimal numberOfIceCreamCones = 2m;
+            decimal iceCreamConePrice = .99M;
+            decimal numberOfIceCreamCones = 2M;
             decimal totalCostofIceCreamCones = iceCreamConePrice * numberOfIceCreamCones;
 
             /*
@@ -209,14 +209,14 @@
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
             */
-            decimal priceOfHotDog = .50m;
-            decimal totalHotDogspurchased = 6m;
+            decimal priceOfHotDog = .50M;
+            decimal totalHotDogspurchased = 6M;
             decimal totalCostofHotDogs = priceOfHotDog * totalHotDogspurchased;
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
             */
-            const decimal costOfPencil = .07M;
+            decimal costOfPencil = .07M;
             decimal totalMoney = .50M;
             int numberOfPencilsAbleToPurchase = (int)(totalMoney / costOfPencil);
             System.Console.WriteLine(numberOfPencilsAbleToPurchase);
@@ -232,7 +232,7 @@
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
             */
-            decimal moneyGivenToClerk = 1M;
+            decimal moneyGivenToClerk = 1.00M;
             decimal costOfCandy = .54M;
             decimal changeReceived = moneyGivenToClerk - costOfCandy;
             /*
@@ -247,53 +247,76 @@
             31. Joy will see her grandma in two days. How many hours until she sees
             her?
             */
-
+            const int hoursInDay = 24;
+            int daysUntilGrandma = 2;
+            int hoursUntilGrandma = daysUntilGrandma * hoursInDay;
             /*
             32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
             much gum will she need?
             */
-
+            int piecesOfGumForCousins = 5;
+            int numberOfCousins = 4;
+            int totalGumForCousins = piecesOfGumForCousins * numberOfCousins;
             /*
             33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
             left?
             */
-
+            decimal totalMoneyOfDan = 3.00M;
+            decimal priceOfCandyBar = 1.00M;
+            totalMoneyOfDan -= priceOfCandyBar;
+            System.Console.WriteLine(totalMoneyOfDan);
             /*
             34. 5 boats are in the lake. Each boat has 3 people. How many people are
             on boats in the lake?
             */
-
+            int numberOfPeopleInBoats = 3;
+            int numberOfBoatsInLake = 5;
+            int numberOfPeopleInLake = numberOfPeopleInBoats * numberOfBoatsInLake;
             /*
             35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
             have now?
             */
-
+            int numberOfLegos = 380;
+            int numberOfLostLegos = 57;
+            numberOfLegos -= numberOfLostLegos;
             /*
             36. Arthur baked 35 muffins. How many more muffins does Arthur have to
             bake to have 83 muffins?
             */
-
+            int numberOfMuffinsToBake = 83;
+            int numberOfMuffinsBaked = 35;
+            int numberOfMuffinsLeftToBake = numberOfMuffinsToBake - numberOfMuffinsBaked;
             /*
             37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
             crayons does Willy have then Lucy?
             */
-
+            int numberOfCrayonsWilly = 1400;
+            int numberOfCrayonsLucy = 290;
+            int numberOfCrayonsWillyMoreLucy = numberOfCrayonsWilly - numberOfCrayonsLucy;
             /*
             38. There are 10 stickers on a page. If you have 22 pages of stickers, how
             many stickers do you have?
             */
-
+            int numberOfStickersPerPage = 10;
+            int numberOfPages = 22;
+            int totalNumberOfStickers = numberOfStickersPerPage * numberOfPages;
             /*
             39. There are 100 cupcakes for 8 children to share. How much will each
             person get if they share the cupcakes equally?
             */
+            double numberOfCupcakes = 100D;
+            double numberOfChildren = 8D;
+            double equalSharesOfCupcakes = (numberOfCupcakes / numberOfChildren);
+            System.Console.WriteLine(equalSharesOfCupcakes);
 
             /*
             40. She made 47 gingerbread cookies which she will distribute equally in
             tiny glass jars. If each jar is to contain six cookies, how many
             cookies will not be placed in a jar?
             */
-
+            int numberOfCookies = 47;
+            int numberOfCookiesHeldByJar = 6;
+            int numberOfCookiesLeftOver = numberOfCookies % numberOfCookiesHeldByJar;
             /*
             41. She also prepared 59 croissants which she plans to give to her 8
             neighbors. If each neighbor received an equal number of croissants,
