@@ -46,39 +46,54 @@
             */
             int pigeonEatingBreadcrumbs = 1;
             int pigeonArriving = 1;
-            int pigeonEatingTotal = pigeonEatingBreadcrumbs + pigeonArriving;
+            pigeonEatingBreadcrumbs += pigeonArriving;
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
             owls are on the fence now?
             */
-
+            int owlsOnFence = 3;
+            int owlsArriving = 2;
+            owlsOnFence += owlsArriving;
             /*
             7. 2 beavers were working on their home. 1 went for a swim. How many
             beavers are still working on their home?
             */
-
+            int beaversWorking = 2;
+            int beaversSwimming = 1;
+            beaversWorking -= beaversSwimming;
             /*
             8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
             many toucans in all?
             */
-
+            int toucansOnLimb = 2;
+            int toucansArriving = 1;
+            toucansOnLimb += toucansArriving;
             /*
             9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
             are there than nuts?
             */
-
+            int squirrelsInTree = 4;
+            int numberOfNuts = 2;
+            int numberOfSquirrelsMoreThanNuts = squirrelsInTree - numberOfNuts;
             /*
             10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
             she find?
             */
-
+            decimal numberOfQuarters = 1M;
+            decimal numberOfDimes = 1M;
+            decimal numberOfNickels = 2M;
+            decimal moneyForMrsHilt = (numberOfQuarters * .25M) + (numberOfDimes * .10M) + (numberOfNickels * .05M);
+            System.Console.WriteLine(moneyForMrsHilt);
             /*
             11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
             class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
             Mrs. Flannery's class bakes 17 muffins. How many muffins does first
             grade bake in all?
             */
-
+            int numberOfMuffinsBrier = 18;
+            int numberOfMuffinsMacAdams = 20;
+            int numberOfMuffinsFlannery = 17;
+            int numberOfMuffinsFirstGrade = numberOfMuffinsBrier + numberOfMuffinsMacAdams + numberOfMuffinsFlannery;
             /*
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
