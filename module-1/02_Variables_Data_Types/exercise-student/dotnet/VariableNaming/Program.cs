@@ -98,52 +98,79 @@
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
             */
-
+            decimal yoyoPrice = .24m;
+            decimal whistlePrice = .14m;
+            decimal totalSpentByHilt = yoyoPrice + whistlePrice;
             /*
             13. Mrs. Hilt made 5 Rice Krispies Treats. She used 8 large marshmallows
             and 10 mini marshmallows. How many marshmallows did she use
             altogether?
             */
+            int numberOfMarshmallowsLarge = 8;
+            int numberOfMarshmallowsSmall = 10;
+            int numberOfMarshmallowsTotal = (numberOfMarshmallowsSmall + numberOfMarshmallowsLarge);
 
             /*
             14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
             Elementary School received 17 inches of snow. How much more snow
             did Mrs. Hilt's house have?
             */
+            int snowForHilt = 29;
+            int snowForBrecknock = 17;
+            int snowDifference = snowForHilt - snowForBrecknock;
+
 
             /*
             15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
             case. How much money does she have left?
             */
+            decimal moneyOfMrsHilt = 10m;
+            decimal priceOfToyTruck = 3m;
+            decimal priceOfPencilCase = 2m;
+            moneyOfMrsHilt -= (priceOfToyTruck + priceOfPencilCase);
 
             /*
             16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
             marbles does he have now?
             */
-
+            int numberOfMarblesOfJosh = 16;
+            int numberOfMarblesLost = 7;
+            numberOfMarblesOfJosh -= numberOfMarblesLost;
             /*
             17. Megan has 19 seashells. How many more seashells does she need to
             find to have 25 seashells in her collection?
             */
-
+            int numberOfSeashellsOfMegan = 19;
+            int numberOfSeashellsGoal = 25;
+            int numberOfSeashellsNeeded = numberOfSeashellsGoal - numberOfSeashellsOfMegan;
             /*
             18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
             many green balloons does Brad have?
             */
+            int numberOfBalloonsOfBrad = 17;
+            int numberOfBallonsRed = 8;
+            int numberOfBallonsGreen = numberOfBalloonsOfBrad - numberOfBallonsRed;
 
             /*
             19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
             How many books are on the shelf now?
             */
-
+            int numberOfBooksOnShelf = 38;
+            int numberOfBooksReturned = 10;
+            numberOfBooksOnShelf += numberOfBooksReturned;
             /*
             20. A bee has 6 legs. How many legs do 8 bees have?
             */
-
+            const int beeLegs = 6;
+            int numberOfBees = 8;
+            int totalBeeLegs = beeLegs * numberOfBees;
             /*
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
+            const decimal iceCreamConePrice = .99m;
+            decimal numberOfIceCreamCones = 2m;
+            decimal totalCostofIceCreamCones = iceCreamConePrice * numberOfIceCreamCones;
 
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
