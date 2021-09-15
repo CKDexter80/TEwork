@@ -396,13 +396,27 @@
             */
             int numberOfCroissantsCristina = 17;
             int numberOfGuests = 7;
-            double numberOfCroissantServings = (double)numberOfCroissantsCristina / (double)numberOfGuests;          
+            double numberOfCroissantServings = (double)numberOfCroissantsCristina / (double)numberOfGuests;
             /*
             51. Bill and Jill are house painters. Bill can paint a 12 x 14 room in 2.15 hours, while Jill averages
             1.90 hours. How long will it take the two painters working together to paint 5 12 x 14 rooms?
             Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
             */
-
+            /*
+            double totalTimeBill = 2.15;
+            double totalTimeJill = 1.9;
+            int numberOfRooms = 5;
+            double combinedRate = (1 / totalTimeBill) + (1 / totalTimeJill);
+            double totalTimeCombined = 1 / combinedRate;
+            double totalRoomTime = totalTimeCombined * (double)numberOfRooms;
+            */
+            double totalTimeBill = 2.15;
+            double totalTimeJill = 1.9;
+            int squareFeetRoom = 168;
+            int numberOfRooms = 5;
+            double combinedRate = (squareFeetRoom / totalTimeBill) + (squareFeetRoom / totalTimeJill);
+            double totalTimeCombined = (double)(squareFeetRoom * numberOfRooms) / combinedRate;       
+            System.Console.WriteLine(totalTimeCombined);
             /*
             52. Create and assign variables to hold a first name, last name, and middle initial. Using concatenation,
             build an additional variable to hold the full name in the order of last name, first name, middle initial. The
@@ -410,12 +424,19 @@
             with a period. Use "Grace", "Hopper, and "B" for the first name, last name, and middle initial.
             Example: "John", "Smith, "D" —> "Smith, John D."
             */
-
+            string firstName = "Grace";
+            string middleInitial = "B";
+            string lastName = "Hopper";
+            string fullName = lastName + ", " + firstName + " " + middleInitial + ".";
+            System.Console.WriteLine(fullName);
             /*
             53. The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
             What percentage of the trip as a whole number (integer) has been completed?
             */
-
+            int totalTripDistance = 800;
+            int distanceAlreadyTravelled = 537;
+            int percentageOfTripComplete = (int)(((double)distanceAlreadyTravelled / (double)totalTripDistance) * 100);
+            System.Console.WriteLine(percentageOfTripComplete);
         }
     }
 }
