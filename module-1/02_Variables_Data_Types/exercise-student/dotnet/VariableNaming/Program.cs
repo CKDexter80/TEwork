@@ -402,14 +402,7 @@
             1.90 hours. How long will it take the two painters working together to paint 5 12 x 14 rooms?
             Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
             */
-            /*
-            double totalTimeBill = 2.15;
-            double totalTimeJill = 1.9;
-            int numberOfRooms = 5;
-            double combinedRate = (1 / totalTimeBill) + (1 / totalTimeJill);
-            double totalTimeCombined = 1 / combinedRate;
-            double totalRoomTime = totalTimeCombined * (double)numberOfRooms;
-            */
+           
             double totalTimeBill = 2.15;
             double totalTimeJill = 1.9;
             int squareFeetRoom = 168;
