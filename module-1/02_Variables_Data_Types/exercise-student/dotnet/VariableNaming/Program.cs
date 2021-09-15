@@ -79,10 +79,10 @@
             10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
             she find?
             */
-            decimal numberOfQuarters = 1M;
-            decimal numberOfDimes = 1M;
-            decimal numberOfNickels = 2M;
-            decimal moneyForMrsHilt = (numberOfQuarters * .25M) + (numberOfDimes * .10M) + (numberOfNickels * .05M);
+            int numberOfQuarters = 1;
+            int numberOfDimes = 1;
+            int numberOfNickels = 2;
+            decimal moneyForMrsHilt = (decimal)(numberOfQuarters * .25) + (decimal)(numberOfDimes * .10) + (decimal)(numberOfNickels * .05);
             System.Console.WriteLine(moneyForMrsHilt);
             /*
             11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
@@ -98,8 +98,8 @@
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
             */
-            decimal yoyoPrice = .24m;
-            decimal whistlePrice = .14m;
+            decimal yoyoPrice = .24M;
+            decimal whistlePrice = .14M;
             decimal totalSpentByHilt = yoyoPrice + whistlePrice;
             /*
             13. Mrs. Hilt made 5 Rice Krispies Treats. She used 8 large marshmallows
@@ -194,7 +194,6 @@
             int concertDistance = 78;
             int distanceTravelled = 32;
             concertDistance -= distanceTravelled;
-
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
@@ -218,8 +217,7 @@
             */
             decimal costOfPencil = .07M;
             decimal totalMoney = .50M;
-            int numberOfPencilsAbleToPurchase = (int)(totalMoney / costOfPencil);
-            System.Console.WriteLine(numberOfPencilsAbleToPurchase);
+            int numberOfPencilsAbleToPurchase = (int)(totalMoney / costOfPencil);          
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
@@ -304,9 +302,9 @@
             39. There are 100 cupcakes for 8 children to share. How much will each
             person get if they share the cupcakes equally?
             */
-            double numberOfCupcakes = 100D;
-            double numberOfChildren = 8D;
-            double equalSharesOfCupcakes = (numberOfCupcakes / numberOfChildren);
+            int numberOfCupcakes = 100;
+            int numberOfChildren = 8;
+            double equalSharesOfCupcakes = (double)(numberOfCupcakes) / (double)(numberOfChildren);
             System.Console.WriteLine(equalSharesOfCupcakes);
 
             /*
@@ -322,61 +320,83 @@
             neighbors. If each neighbor received an equal number of croissants,
             how many will be left with Marian?
             */
-
+            int numberOfCroissants = 59;
+            int numberOfNeighbors = 8;
+            int numberOfRemainingCroissants = numberOfCroissants % numberOfNeighbors;
             /*
             42. Marian also baked oatmeal cookies for her classmates. If she can
             place 12 cookies on a tray at a time, how many trays will she need to
             prepare 276 oatmeal cookies at a time?
             */
-
+            int numberOfOatmealCookies = 276;
+            int numberOfCookiesPerTray = 12;
+            int numberOfTrays = (int)System.Math.Ceiling((double)(numberOfOatmealCookies) / (double)(numberOfCookiesPerTray));
+            System.Console.WriteLine(numberOfTrays);
             /*
             43. Marian’s friends were coming over that afternoon so she made 480
             bite-sized pretzels. If one serving is equal to 12 pretzels, how many
             servings of bite-sized pretzels was Marian able to prepare?
             */
-
+            int numberOfPretzels = 480;
+            int servingSizeOfPretzels = 12;
+            int numberOfServings = numberOfPretzels / servingSizeOfPretzels;
             /*
             44. Lastly, she baked 53 lemon cupcakes for the children living in the city
             orphanage. If two lemon cupcakes were left at home, how many
             boxes with 3 lemon cupcakes each were given away?
             */
-
+            int numberOfCupcakesTaken = 51;
+            int numberOfCupcakesPerBox = 3;
+            int numberOfBoxesGiven = numberOfCupcakesTaken / numberOfCupcakesPerBox;
             /*
             45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
             were served equally to 12 people, how many carrot sticks were left
             uneaten?
             */
-
+            int numberOfCarrotSticks = 74;
+            int numberOfPeople = 12;
+            int remainingCarrotSticks = numberOfCarrotSticks % numberOfPeople;
             /*
             46. Susie and her sister gathered all 98 of their teddy bears and placed
             them on the shelves in their bedroom. If every shelf can carry a
             maximum of 7 teddy bears, how many shelves will be filled?
             */
-
+            int numberOfTeddyBears = 98;
+            int numberOfBearsPerShelf = 7;
+            int numberOfShelvesFull = numberOfTeddyBears / numberOfBearsPerShelf;
             /*
             47. Susie’s mother collected all family pictures and wanted to place all of
             them in an album. If an album can contain 20 pictures, how many
             albums will she need if there are 480 pictures?
             */
-
+            int numberOfPictures = 480;
+            int numberOfPicturesPerAlbum = 20;
+            int numberOfAlbumsNeeded = numberOfPictures / numberOfPicturesPerAlbum;
             /*
             48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
             room and placed them in boxes. If a full box can hold a maximum of 8
             cards, how many boxes were filled and how many cards are there in
             the unfilled box?
             */
-
+            int numberOfCards = 94;
+            int numberOfCardsPerBox = 8;
+            int numberOfBoxesFull = (int)(numberOfCards / numberOfCardsPerBox);
+            int numberOfRemainingCards = numberOfCards % numberOfCardsPerBox;
             /*
             49. Susie’s father repaired the bookshelves in the reading room. If he has
             210 books to be distributed equally on the 10 shelves he repaired,
             how many books will each shelf contain?
             */
-
+            int numberOfBooks = 210;
+            int numberOfShelves = 10;
+            int numberOfBooksPerShelf = numberOfBooks / numberOfShelves;
             /*
             50. Cristina baked 17 croissants. If she planned to serve this equally to
             her seven guests, how many will each have?
             */
-
+            int numberOfCroissantsCristina = 17;
+            int numberOfGuests = 7;
+            double numberOfCroissantServings = (double)numberOfCroissantsCristina / (double)numberOfGuests;          
             /*
             51. Bill and Jill are house painters. Bill can paint a 12 x 14 room in 2.15 hours, while Jill averages
             1.90 hours. How long will it take the two painters working together to paint 5 12 x 14 rooms?
