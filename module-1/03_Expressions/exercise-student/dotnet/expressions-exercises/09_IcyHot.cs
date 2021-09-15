@@ -10,6 +10,13 @@
          */
         public bool IcyHot(int temp1, int temp2)
         {
+            bool temperatureIcy = (temp1 < 0 || temp2 < 0) == true;
+            bool temperatureHot = (temp1 > 100 || temp2 > 100) == true;
+
+            if (temperatureIcy && temperatureHot)
+            {
+                return true;
+            }
             return false;
         }
     }

@@ -11,6 +11,13 @@
         */
         public bool Or35(int n)
         {
+            bool multipleOf3 = (n % 3 == 0) == true;
+            bool multipleOf5 = (n % 5 == 0) == true;
+
+            if (multipleOf3 || multipleOf5)
+            {
+                return true;
+            }
             return false;
         }
     }
