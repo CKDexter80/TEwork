@@ -13,9 +13,17 @@
         DateFashion(5, 2) → 0
         DateFashion(5, 5) → 1
         */
-        public int DateFashion(int you, int date)
+        public int DateFashion(int you, int date)   
         {
-            return 0;
+            if ((you <= 2) || (date <= 2))
+            {
+                return 0;
+            }
+            else if ((you >= 8) || (date >= 8))
+            {
+                return 2;
+            }
+            return 1;
         }
     }
 }

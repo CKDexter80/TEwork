@@ -11,6 +11,18 @@
       */
         public int Max1020(int a, int b)
         {
+            
+            bool inRange(int num)
+            {
+                if (num >= 10 && num <= 20)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+               
+            
             return 0;
         }
     }

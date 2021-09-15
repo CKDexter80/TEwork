@@ -10,15 +10,17 @@
          Diff21(21) → 0
          */
         public int Diff21(int n)
-        {
-            int diffValue = System.Math.Abs(21 - n);
+        {          
 
             if (n > 21)
             {
-                diffValue *= 2;
+                return (n-21) * 2;
+            } else
+            {
+                return 21 - n;
             }
 
-            return diffValue;
+            
         }
     }
 }

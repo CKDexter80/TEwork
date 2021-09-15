@@ -11,6 +11,19 @@
         */
         public bool HasTeen(int a, int b, int c)
         {
+            bool IsTeen (int age)
+            {
+                if (age >= 13 && age <= 19)
+                {
+                    return true;
+                }
+                return false;
+            }
+            
+            if (IsTeen(a) || IsTeen(b) || IsTeen(c))
+            {
+                return true;
+            }
             return false;
         }
     }

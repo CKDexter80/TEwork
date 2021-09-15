@@ -10,7 +10,23 @@
         */
         public int IntMax(int a, int b, int c)
         {
-            return 0;
+            int largestNumber = 0;
+            
+            if (a > b)
+            {
+                largestNumber = a;
+            } else
+            {
+                largestNumber = b;
+            }
+            
+            if (largestNumber < c)
+            {
+                largestNumber = c;
+            } 
+
+         
+            return largestNumber;
         }
     }
 }

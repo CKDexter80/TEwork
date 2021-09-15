@@ -11,6 +11,19 @@
         */
         public bool LoneTeen(int a, int b)
         {
+            bool IsTeen(int age)
+            {
+                if (age >= 13 && age <= 19)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            if (IsTeen(a) ^ IsTeen(b))
+            {
+                return true;
+            }
             return false;
         }
     }
