@@ -21,7 +21,22 @@
                 return false;
             }
 
-               
+            if (inRange(a) && inRange(b))
+            {
+                if (a >= b)
+                {
+                    return a;
+                }
+                return b;
+            }
+            else if (inRange(a) && !inRange(b))
+            {
+                return a;
+            }
+            else if (!inRange(a) && inRange(b))
+            {
+                return b;
+            }
             
             return 0;
         }
