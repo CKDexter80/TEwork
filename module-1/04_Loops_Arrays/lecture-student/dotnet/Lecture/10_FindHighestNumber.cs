@@ -9,7 +9,18 @@
         */
         public int FindTheHighestNumber(int[] randomNumbers)
         {
-            return 0;
+            int arrayLength = randomNumbers.Length;
+            int sum = 0;
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                if (randomNumbers[i] >= sum)
+                {
+                    sum = randomNumbers[i];
+                } 
+                
+            }
+            return sum;
         }
     }
 }
