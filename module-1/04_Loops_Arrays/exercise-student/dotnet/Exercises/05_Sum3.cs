@@ -10,7 +10,14 @@
          */
         public int Sum3(int[] nums)
         {
-            return 0;
+            int arrayLength = nums.Length;
+            int sum = 0;
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                sum += nums[i];
+            }
+            return sum;
         }
     }
 }

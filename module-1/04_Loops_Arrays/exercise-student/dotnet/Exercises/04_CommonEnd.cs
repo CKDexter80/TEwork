@@ -11,6 +11,14 @@
          */
         public bool CommonEnd(int[] a, int[] b)
         {
+            int arrayLastA = a.Length - 1;
+            int arrayLastB = b.Length - 1;
+
+            if (a[0] == b[0] || a[arrayLastA] == b[arrayLastB])
+            {
+                return true;
+            }
+
             return false;
         }
     }

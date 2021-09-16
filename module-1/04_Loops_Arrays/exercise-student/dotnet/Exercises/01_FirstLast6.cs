@@ -11,6 +11,11 @@
          */
         public bool FirstLast6(int[] nums)
         {
+            int arrayLast = nums.Length - 1;
+            if (nums[0] == 6 || nums[arrayLast] == 6)
+            {
+                return true;
+            }
             return false;
         }
     }
