@@ -1,4 +1,4 @@
-﻿namespace Exercises
+﻿ namespace Exercises
 {
     public partial class Exercises
     {
@@ -11,7 +11,21 @@
          */
         public bool In1To10(int n, bool outsideMode)
         {
-            return false;
+            if (outsideMode)
+            {
+                if (n <= 1 || n >= 10)
+                {
+                    return true;
+                }
+                return false;
+            } else
+            {
+                if (n >= 1 && n <= 10)
+                {
+                    return true;
+                }
+                return false;
+            }
         }
     }
 }

@@ -13,7 +13,16 @@
          */
         public string AlarmClock(int day, bool vacation)
         {
-            return "";
+            bool weekend = (day == 0 || day == 6) == true;
+            bool weekday = (day > 0 && day < 6) == true;
+            if (vacation && weekday || !vacation && weekend)
+            {
+                return "10:00";
+            }else if (weekday && !vacation)
+            {
+                return "7:00";
+            }
+            return "off";
         }
     }
 }
