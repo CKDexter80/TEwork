@@ -14,7 +14,7 @@
 
             for (int i = 0; i < arrayLength; i++)
             {
-                if (randomNumbers[i] >= sum)
+                if (randomNumbers[i] > sum)
                 {
                     sum = randomNumbers[i];
                 } 
