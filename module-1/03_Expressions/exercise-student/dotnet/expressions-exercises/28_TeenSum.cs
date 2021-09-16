@@ -11,7 +11,21 @@
          */
         public int TeenSum(int a, int b)
         {
-            return 0;
+            int sum = a + b;
+            bool TeenCheck(int num)
+            {
+                if (num >= 13 && num <= 19)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            if (TeenCheck(a) || TeenCheck(b))
+            {
+                return 19;
+            }
+            return sum;
         }
     }
 }

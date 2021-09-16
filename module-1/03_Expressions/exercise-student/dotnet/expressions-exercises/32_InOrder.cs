@@ -11,6 +11,13 @@
          */
         public bool InOrder(int a, int b, int c, bool bOk)
         {
+            if (b > a && c > b && !bOk)
+            {
+                return true;
+            } else if (c > b && bOk)
+            {
+                return true;
+            }
             return false;
         }
     }
