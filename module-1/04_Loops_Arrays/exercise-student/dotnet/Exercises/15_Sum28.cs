@@ -10,6 +10,21 @@
          */
         public bool Sum28(int[] nums)
         {
+            int twoCounter = 0;
+            int arrayLength = nums.Length;
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                if (nums[i] == 2)
+                {
+                    twoCounter += nums[i];
+                }
+            }
+
+            if (twoCounter == 8)
+            {
+                return true;
+            }
             return false;
         }
     }

@@ -11,19 +11,7 @@
          */
         public int[] RotateLeft3(int[] nums)
         {
-            int arrayLength = nums.Length;
-            int[] rotatedArray = new int[3];
-
-            for (int i = 0; i < arrayLength; i++)
-            {
-                if (i == arrayLength - 1)
-                {
-                   
-                }
-
-            }
-
-            return rotatedArray;
+            return new int[] { nums[1], nums[2], nums[0] };
         }
     }
 }

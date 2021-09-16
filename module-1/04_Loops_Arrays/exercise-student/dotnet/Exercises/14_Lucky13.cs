@@ -10,7 +10,17 @@
          */
         public bool Lucky13(int[] nums)
         {
-            return false;
+            int arrayLength = nums.Length;
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                if (nums[i] == 1 || nums[i] == 3)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
