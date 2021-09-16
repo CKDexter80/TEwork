@@ -10,8 +10,18 @@
          Reverse3([7, 0, 0]) → [0, 0, 7]
          */
         public int[] Reverse3(int[] nums)
-        {
-            return new int[] { };
+        {            
+            int arrayLength = nums.Length;
+            int arrayLast = nums.Length - 1;
+            int[] reverseArray = new int[arrayLength];
+            int j = arrayLast;
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                 reverseArray[i] = nums[j];
+                j--;
+            }
+            return reverseArray;
         }
     }
 }

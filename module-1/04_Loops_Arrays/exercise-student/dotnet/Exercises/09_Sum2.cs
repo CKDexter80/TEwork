@@ -11,7 +11,19 @@
          */
         public int Sum2(int[] nums)
         {
-            return 0;
+            int sum = 0;
+            int arrayLength = nums.Length;
+            
+            if (arrayLength >= 2)
+            {
+                sum = nums[0] + nums[1];
+            }
+            else if (arrayLength == 1)
+            {
+                sum = nums[0];
+            }
+
+            return sum;
         }
     }
 }
