@@ -15,14 +15,15 @@ namespace TempConvert
 
             Console.Write("Is the temperature in (C)elsius, or (F)ahrenheit? ");
             string temperatureCOrF = Console.ReadLine();
+            string temperatureCOrFUpper = temperatureCOrF.ToUpper();
 
             Console.WriteLine();
             Console.WriteLine();
 
-            if (temperatureCOrF == "f" || temperatureCOrF == "F")
+            if (temperatureCOrFUpper == "F")
             {
                 Console.WriteLine(temperatureNumber + "F is " + ((temperatureNumber - 32) / 1.8) + "C.");
-            } else if(temperatureCOrF == "c" || temperatureCOrF == "C")
+            } else if (temperatureCOrFUpper == "C")
             {
                 Console.WriteLine(temperatureNumber + "C is " + ((temperatureNumber * 1.8) + 32) + "F.");
             }
