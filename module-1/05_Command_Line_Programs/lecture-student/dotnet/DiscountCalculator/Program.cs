@@ -54,7 +54,10 @@ namespace DiscountCalculator
             }
 
             
-            
+            //v2
+            //format as a string of money
+            //original cost and discounted
+            //tweak
 
 
 
