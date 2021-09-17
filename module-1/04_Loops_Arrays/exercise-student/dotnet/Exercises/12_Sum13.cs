@@ -16,27 +16,42 @@
         {
             int sumLuckyNumbers = 0;
             int arrayLength = nums.Length;
-            int counter = 0;
-            for (int i = 0; i < arrayLength; i++)
+            int thirteenMarker = 0;
+
+            void ThirteenTest(int n)
             {
-                counter++;
-                if (nums[i] == 13)
-                {
-                    break;
-                }
-                sumLuckyNumbers += nums[i];
+                    for (int i = 0; i < arrayLength-n; i++)
+                    {                       
+                        if (nums[i] == 13)
+                        {
+                            sumLuckyNumbers += 0;
+                            thirteenMarker++;
+                        }
+                        else if (thirteenMarker == 1)
+                        {
+                            sumLuckyNumbers += 0;
+                            thirteenMarker = 0;
+                        }
+
+                    sumLuckyNumbers += nums[i];
+                        thirteenMarker = 0;
+                    }
+                
+
             }
 
-            for (int i = counter+1; i < arrayLength; i++)
+
+
+            if (nums[arrayLength - 1] == 13 || nums[arrayLength - 2] == 13)
             {
-                
-                if (nums[i] == 13)
-                {
-                    break;
-                }
-                sumLuckyNumbers += nums[i];
+                ThirteenTest(2);
             }
+            ThirteenTest(0);
+
+
+
             return sumLuckyNumbers;
+
         }
     }
 }

@@ -11,34 +11,48 @@
       */
         public int Max1020(int a, int b)
         {
-            
-            bool inRange(int num)
             {
-                if (num >= 10 && num <= 20)
+                if (a >= 10 && a <= 20 && b >= 10 && b <= 20)
                 {
-                    return true;
+                    if (a > b)
+                    {
+                        return a;
+                    }
+                    else if (b > a)
+                    {
+                        return b;
+                    }
                 }
-                return false;
+                return 0;
             }
 
-            if (inRange(a) && inRange(b))
-            {
-                if (a >= b)
-                {
-                    return a;
-                }
-                return b;
-            }
-            else if (inRange(a) && !inRange(b))
-            {
-                return a;
-            }
-            else if (!inRange(a) && inRange(b))
-            {
-                return b;
-            }
-            
-            return 0;
+            /* bool inRange(int num)
+             {
+                 if (num >= 10 && num <= 20)
+                 {
+                     return true;
+                 }
+                 return false;
+             }
+
+             if (inRange(a) && inRange(b))
+             {
+                 if (a >= b)
+                 {
+                     return a;
+                 }
+                 return b;
+             }
+             else if (inRange(a) && !inRange(b))
+             {
+                 return a;
+             }
+             else if (!inRange(a) && inRange(b))
+             {
+                 return b;
+             }
+
+             return 0;*/
         }
     }
 }

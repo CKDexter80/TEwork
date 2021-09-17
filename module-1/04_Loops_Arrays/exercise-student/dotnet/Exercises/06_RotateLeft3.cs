@@ -11,7 +11,15 @@
          */
         public int[] RotateLeft3(int[] nums)
         {
-            return new int[] { nums[1], nums[2], nums[0] };
+            int zeroHolder = nums[0];
+
+            for (int i = 0; i < nums.Length - 1; i++)
+            {
+                nums[i] = nums[i + 1];
+            }
+            nums[nums.Length - 1] = zeroHolder;
+
+            return nums;
         }
     }
 }
