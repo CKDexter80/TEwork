@@ -12,16 +12,26 @@
         {
 
             int arrayLength = nums.Length;
+            int twoCounter = 0;
 
             for (int i = 0; i < arrayLength; i++)
             {
-                if (nums[i] == 2 && nums[i - 1] == 2)
+                if (nums[i] == 2)
+                {
+                    twoCounter++;
+                }
+                else
+                {
+                    twoCounter = 0;
+                }
+
+                if (twoCounter == 2)
                 {
                     return true;
                 }
             }
-
             return false;
+           
         }
     }
 }
