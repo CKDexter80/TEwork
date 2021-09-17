@@ -6,7 +6,29 @@ namespace TempConvert
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Write("Please enter the temperature: ");
+            string temperature = Console.ReadLine();
+            int temperatureNumber = int.Parse(temperature);
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.Write("Is the temperature in (C)elsius, or (F)ahrenheit? ");
+            string temperatureCOrF = Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            if (temperatureCOrF == "f" || temperatureCOrF == "F")
+            {
+                Console.WriteLine(temperatureNumber + "F is " + ((temperatureNumber - 32) / 1.8) + "C.");
+            } else if(temperatureCOrF == "c" || temperatureCOrF == "C")
+            {
+                Console.WriteLine(temperatureNumber + "C is " + ((temperatureNumber * 1.8) + 32) + "F.");
+            }
+
+
+
         }
     }
 }
