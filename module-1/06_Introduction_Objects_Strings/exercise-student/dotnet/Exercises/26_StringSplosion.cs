@@ -10,7 +10,15 @@
         */
         public string StringSplosion(string str)
         {
-            return null;
+            string explodedStringHolder = "";
+            int countdownTheString = str.Length;
+            
+            for (int i = 0; i < str.Length; i++)
+            {
+                explodedStringHolder = str.Substring(0, countdownTheString) + explodedStringHolder;
+                countdownTheString--;
+            }
+            return explodedStringHolder;
         }
     }
 }
