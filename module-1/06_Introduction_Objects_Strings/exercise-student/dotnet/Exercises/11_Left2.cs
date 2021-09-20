@@ -11,7 +11,12 @@
         */
         public string Left2(string str)
         {
-            return null;
+            
+            string firstTwoLetters = str.Substring(0, 2);
+            string restOfTheWord = str.Substring(2, str.Length - 2);
+            
+                        
+            return $"{restOfTheWord}{firstTwoLetters}";
         }
     }
 }

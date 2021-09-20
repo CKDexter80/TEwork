@@ -11,7 +11,10 @@
         */
         public string Right2(string str)
         {
-            return null;
+            string restOfTheWord = str.Substring(0, str.Length - 2);
+            string lastTwoLetters = str.Substring(str.Length - 2);
+
+            return $"{lastTwoLetters}{restOfTheWord}";
         }
     }
 }
