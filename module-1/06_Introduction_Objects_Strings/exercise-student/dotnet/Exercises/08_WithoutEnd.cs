@@ -11,7 +11,8 @@
         */
         public string WithoutEnd(string str)
         {
-            return null;
+            string stringWithNoBeginningEnd = str.Substring(1, str.Length - 2);
+            return stringWithNoBeginningEnd;
         }
     }
 }

@@ -11,7 +11,13 @@
         */
         public string NonStart(string a, string b)
         {
-            return null;
+            string removeFirstChar(string toRemoveString)
+            {
+                string removedChar = toRemoveString.Substring(1, toRemoveString.Length - 1);
+                return removedChar;
+            }
+            return $"{removeFirstChar(a)}{removeFirstChar(b)}";
         }
     }
 }
+
