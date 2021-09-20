@@ -12,6 +12,10 @@
         */
         public bool HasBad(string str)
         {
+            if (str.IndexOf("bad").Equals(0) || str.IndexOf("bad").Equals(1))
+            {
+                return true;
+            }
             return false;
         }
     }
