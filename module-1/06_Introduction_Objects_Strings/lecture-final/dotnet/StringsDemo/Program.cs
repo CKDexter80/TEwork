@@ -37,31 +37,56 @@ namespace StringsDemo
 
             // 4. What about the last word?
             // Output: Lovelace
-
-            // Console.WriteLine("Last Word: ");
+            // string lastWord = name.Substring(4);
+            string[] wordArray = name.Split(' ');
+            string lastWord = wordArray[wordArray.Length - 1];
+            Console.WriteLine($"Last Word: {lastWord}");
 
             // 5. Does the string contain inside of it "Love"?
             // Output: true
 
-            // Console.WriteLine("Contains \"Love\"");
+            bool hasLove = name.Contains("Love");
+
+            Console.WriteLine($"Contains \"Love\" {hasLove}");
 
             // 6. Where does the string "lace" show up in name?
             // Output: 8
-
-            // Console.WriteLine("Index of \"lace\": ");
+            int whereIsLace = name.IndexOf("lace");
+            Console.WriteLine($"Index of \"lace\": {whereIsLace}");
 
             // 7. How many 'a's OR 'A's are in name?
             // Output: 3
 
-            // Console.WriteLine("Number of \"a's\": ");
+            int numberOfAs = 0;
+
+            for (int i = 0; i < name.Length; i++)
+            {
+                //Console.WriteLine(name[i]);
+                if (name[i] == 'a' || name[i] == 'A')
+                {
+                    numberOfAs++;
+                }
+            }
+
+            Console.WriteLine($"Number of \"a's\": {numberOfAs}");
 
             // 8. Replace "Ada" with "Ada, Countess of Lovelace"
 
-            // Console.WriteLine(name);
+            string adaReplacement = name.Replace("Ada", "Ada, Countess of ");
+
+            Console.WriteLine($"Hi! My name: {adaReplacement}");
 
             // 9. Set name equal to null.
+            int number;
+            name = null;
+            //string nullName = null;
 
             // 10. If name is equal to null or "", print out "All Done".
+            //if (String.IsNullOrEmpty(name))
+            if (name == null || name == "")
+            {
+                Console.WriteLine("All Done");
+            }
 
             Console.ReadLine();
         }
