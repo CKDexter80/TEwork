@@ -10,7 +10,12 @@
         */
         public string StringBits(string str)
         {
-            return null;
+            string newStringHolder = "";
+            for (int i = 0; i < str.Length; i+=2)
+            {
+                newStringHolder += str[i];
+            }
+            return newStringHolder;
         }
     }
 }

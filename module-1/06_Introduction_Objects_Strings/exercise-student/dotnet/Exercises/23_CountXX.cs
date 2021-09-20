@@ -10,7 +10,15 @@
         */
         public int CountXX(string str)
         {
-            return 0;
+            int xxCounter = 0;
+            for (int i = 0; i < str.Length - 1; i++)
+            {
+                if (str.Substring(i, 2).Equals("xx"))
+                {
+                    xxCounter++;                        
+                }
+            }
+            return xxCounter;
         }
     }
 }

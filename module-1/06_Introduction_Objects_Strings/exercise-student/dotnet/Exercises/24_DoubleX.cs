@@ -10,6 +10,21 @@
         */
         public bool DoubleX(string str)
         {
+            int firstOccurenceX = str.IndexOf('x');
+
+            if (firstOccurenceX < 0 || str.Length < 2)
+            {
+                return false;
+            }
+            else if ((str.Length - 1) == firstOccurenceX)
+            {
+                return false;
+            }
+            else if (str.Substring(firstOccurenceX, 2).Equals("xx"))
+            {
+                return true;
+            }
+
             return false;
         }
     }
