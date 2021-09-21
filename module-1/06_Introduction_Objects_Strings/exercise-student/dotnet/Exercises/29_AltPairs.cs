@@ -10,7 +10,23 @@
         */
         public string AltPairs(string str)
         {
-            return null;
+            string pairsRemovedString = "";
+            int letterCounter = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (letterCounter == 2)
+                {
+                    letterCounter = 0;
+                    i++;
+                }
+                else
+                {
+                    pairsRemovedString += str[i];
+                    letterCounter++;
+                }
+            }            
+            return pairsRemovedString;
         }
     }
 }
