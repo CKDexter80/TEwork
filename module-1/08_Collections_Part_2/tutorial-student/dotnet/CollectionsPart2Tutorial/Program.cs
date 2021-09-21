@@ -10,17 +10,23 @@ namespace CollectionsPart2Tutorial
 
             // Step One: Declare a Dictionary
 
-
+            Dictionary<string, string> projects = new Dictionary<string, string>();
 
 
             // Step Two: Add items to a Dictionary
 
-
+            projects["Ada"] = "Inventing Computer Programming";
+            projects["Grace"] = "COBOL";
+            projects["Margaret"] = "Apollo Guidance Computer";
+            projects["Adele"] = "Graphical User Interfaces";
 
 
             // Step Three: Loop through a Dictionary
 
-
+            foreach (KeyValuePair<string, string> project in projects)
+            {
+                Console.WriteLine("The key " + project.Key + " is linked to the value " + project.Value);
+            }
 
 
         }
