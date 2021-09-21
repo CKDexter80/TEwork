@@ -12,7 +12,13 @@ namespace Exercises
         */
         public List<string> Array2List(string[] stringArray)
         {
-            return null;
+            List<string> newListFromArray = new List<string>();
+
+            foreach (string itemInArray in stringArray) {
+                newListFromArray.Add(itemInArray);
+            }
+            
+            return newListFromArray;
         }
     }
 }

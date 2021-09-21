@@ -18,7 +18,29 @@ namespace Exercises
         */
         public List<string> FizzBuzzList(int[] integerArray)
         {
-            return null;
+            List<string> convertedFizzBuzzList = new List<string>();
+
+            foreach (int integerInArray in integerArray)
+            {
+                if (integerInArray % 15 == 0)
+                {
+                    convertedFizzBuzzList.Add("FizzBuzz");
+                }
+                else if (integerInArray % 5 == 0)
+                {
+                    convertedFizzBuzzList.Add("Buzz");
+                }
+                else if (integerInArray % 3 == 0)
+                {
+                    convertedFizzBuzzList.Add("Fizz");
+                }
+                else
+                {
+                    convertedFizzBuzzList.Add(integerInArray.ToString());
+                }
+            }
+
+            return convertedFizzBuzzList;
         }
     }
 }

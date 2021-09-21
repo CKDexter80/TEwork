@@ -13,6 +13,19 @@ namespace Exercises
         */
         public bool FoundIntTwice(List<int> integerList, int intToFind)
         {
+            int integerCounter = 0;
+
+            foreach (int integerInList in integerList)
+            {
+                if (integerInList == intToFind)
+                {
+                    integerCounter++;                    
+                }
+            }
+            if (integerCounter >= 2)
+            {
+                return true;
+            }
             return false;
         }
     }
