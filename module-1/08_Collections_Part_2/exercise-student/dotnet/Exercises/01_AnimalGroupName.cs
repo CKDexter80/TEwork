@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+
 namespace Exercises
 {
     public partial class Exercises
@@ -34,7 +35,41 @@ namespace Exercises
          */
         public string AnimalGroupName(string animalName)
         {
-            return null;
+            string animalGroup = "unknown";
+
+            Dictionary<string, string> groupOfAnimals = new Dictionary<string, string>()
+            {
+                {"Rhino", "Crash"},
+                {"Giraffe", "Tower"},
+                {"Elephant", "Herd"},
+                {"Lion", "Pride"},
+                {"Crow", "Murder"},
+                {"Pigeon", "Kit"},
+                {"Flamingo", "Pat"},
+                {"Deer", "Herd"},
+                {"Dog", "Pack"},
+                {"Crocodile", "Float"}                
+            };
+
+            if (animalName == null || animalName == "")
+            {
+                return animalGroup;
+            }
+            else if (groupOfAnimals.ContainsKey(AnimalNameToTitleCase(animalName)))
+            {
+                animalGroup = groupOfAnimals[AnimalNameToTitleCase(animalName)];
+            }
+            return animalGroup;
+        }
+
+        public string AnimalNameToTitleCase(string animalNameInput)
+        {
+            string firstLetterCapital = animalNameInput.Substring(0, 1).ToUpper();
+            string restOfLettersLower = animalNameInput.Substring(1).ToLower();
+            string animalNameinTitleCase = firstLetterCapital + restOfLettersLower;
+            return animalNameinTitleCase;
         }
     }
+
 }
+
