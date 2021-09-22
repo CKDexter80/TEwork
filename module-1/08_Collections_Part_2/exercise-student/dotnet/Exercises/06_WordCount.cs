@@ -18,7 +18,25 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            Dictionary<string, int> wordCountDictionary = new Dictionary<string, int>();
+            int wordCounter = 0;
+
+            foreach (string word in words)
+            {
+                foreach (string word2 in words)
+                {
+                    if (word == word2)
+                    {
+                        wordCounter++;
+                    }
+                }
+                wordCountDictionary[word] = wordCounter;
+                wordCounter = 0;
+            };
+
+            
+
+            return wordCountDictionary;
         }
-    }
+}
 }

@@ -15,7 +15,30 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            Dictionary<string, bool> wordMultipleDictionary = new Dictionary<string, bool>();
+            int letterCounter = 0;
+
+            foreach (string word in words)
+            {
+                foreach (string wordToCompare in words)
+                {
+                    if (word == wordToCompare)
+                    {
+                        letterCounter++;
+                    }
+                }
+                if (letterCounter >= 2)
+                {
+                    wordMultipleDictionary[word] = true;
+                }
+                else
+                {
+                    wordMultipleDictionary[word] = false;
+                }
+                letterCounter = 0;
+            }
+
+            return wordMultipleDictionary;
         }
     }
 }

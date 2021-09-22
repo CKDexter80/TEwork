@@ -17,7 +17,23 @@ namespace Exercises
          */
         public Dictionary<int, int> IntCount(int[] ints)
         {
-            return null;
+            Dictionary<int, int> numberCountDictionary = new Dictionary<int, int>();
+            int numberCounter = 0;
+
+            foreach (int number in ints)
+            {
+                foreach (int number2 in ints)
+                {
+                    if (number == number2)
+                    {
+                        numberCounter++;
+                    }
+                }
+                numberCountDictionary[number] = numberCounter;
+                numberCounter = 0;
+            };
+
+            return numberCountDictionary;
         }
     }
 }
