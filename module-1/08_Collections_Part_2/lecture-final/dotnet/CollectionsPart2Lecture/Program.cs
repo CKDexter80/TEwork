@@ -13,7 +13,7 @@ namespace CollectionsPart2Lecture
             Console.WriteLine();
             //what kind of dictionary
             //vending machine item
-                      //key //value
+            //key //value
             Dictionary<int, string> contentsOfVM = new Dictionary<int, string>()
             {         //keypad code what snack is at that location
                     { 512, "cheetos" },
@@ -65,7 +65,7 @@ namespace CollectionsPart2Lecture
             coolProgammingLanguages.Add("python");
             coolProgammingLanguages.Add("ruby");
 
-            HashSet<string> weirdProgrammingLanguages =  new HashSet<string>() { "javascript","ruby" };
+            HashSet<string> weirdProgrammingLanguages = new HashSet<string>() { "javascript", "ruby" };
 
             //intersectwith
             //coolProgammingLanguages.IntersectWith(weirdProgrammingLanguages);
@@ -74,8 +74,13 @@ namespace CollectionsPart2Lecture
             //  coolProgammingLanguages.UnionWith(weirdProgrammingLanguages);
             // coolProgammingLanguages = coolProgammingLanguages;
             //exceptwith
+            //removes the intersection
             coolProgammingLanguages.ExceptWith(weirdProgrammingLanguages);
-            coolProgammingLanguages = coolProgammingLanguages;
+            foreach (string language in coolProgammingLanguages)
+            {
+                Console.WriteLine(language);
+            }
+
 
         }
         //return type method name params??
@@ -89,7 +94,7 @@ namespace CollectionsPart2Lecture
             }
 
             return containsKey;
-   
+
         }
     }
 }
