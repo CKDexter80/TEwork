@@ -63,10 +63,6 @@
                 {
                     CurrentVolume++;
                 }
-                else
-                {
-                    CurrentVolume = CurrentVolume;
-                }
             }
         }
         public void LowerVolume()
@@ -77,10 +73,7 @@
                 {
                     CurrentVolume--;
                 }
-                else
-                {
-                    CurrentVolume = CurrentVolume;
-                }
+
             }
         }
 
