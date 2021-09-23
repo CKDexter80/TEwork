@@ -1,18 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2016
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDemo", "CardDemo\CardDemo.csproj", "{FB751BC5-4184-4410-9057-489990113D37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8126E4C7-4C81-46B0-960E-AFFFA2637DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8126E4C7-4C81-46B0-960E-AFFFA2637DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8126E4C7-4C81-46B0-960E-AFFFA2637DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8126E4C7-4C81-46B0-960E-AFFFA2637DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB751BC5-4184-4410-9057-489990113D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB751BC5-4184-4410-9057-489990113D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB751BC5-4184-4410-9057-489990113D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB751BC5-4184-4410-9057-489990113D37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
