@@ -26,7 +26,7 @@ namespace Exercises
             foreach (string word in words)
             {
                 string last2letters = word.Substring(word.Length - 2);
-                string newWord = word.Substring(0, word.Length - 2);
+                string newWord = word.Substring(0, word.Length - 1);
                 int last2OccurenceCounter = 0;
 
                 for (int i = 0; i < newWord.Length - 1; i++)
