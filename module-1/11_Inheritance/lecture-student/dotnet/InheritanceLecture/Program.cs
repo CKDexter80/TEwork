@@ -11,6 +11,8 @@ namespace InheritanceLecture
             Console.WriteLine("Starting a general auction");
             Console.WriteLine("-----------------");
 
+            //overload constructor
+
             Auction generalAuction = new Auction();
 
             generalAuction.PlaceBid(new Bid("Josh", 1));
@@ -19,8 +21,8 @@ namespace InheritanceLecture
             //....
             //....
             // This might go on until the auction runs out of time or hits a max # of bids
-
-
+            ReserveAuction reserveAuction = new ReserveAuction(25);
+            reserveAuction.PlaceBid()
 
             Console.ReadLine();
         }
