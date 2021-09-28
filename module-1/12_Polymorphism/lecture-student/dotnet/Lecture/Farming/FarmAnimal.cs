@@ -3,7 +3,7 @@ namespace Lecture.Farming
     /// <summary>
     /// A base farm animal class.
     /// </summary>
-    public class FarmAnimal
+    public class FarmAnimal: ISing // also all subclasses will implement
     {
         /// <summary>
         /// The farm animal's name.
@@ -25,5 +25,11 @@ namespace Lecture.Farming
             Name = name;
             Sound = sound;
         }
+
+        public virtual string MakeSound()
+        {
+            return "animal sounds";
+        }
+
     }
 }
