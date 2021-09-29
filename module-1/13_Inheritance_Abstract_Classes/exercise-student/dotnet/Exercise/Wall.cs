@@ -17,7 +17,12 @@ namespace Exercise
 
         public abstract int GetArea();
 
-       // public abstract string ToString();
+        public override string ToString()
+        {
+            return $"{Name} ";
+        }
+        
+        
         
     }
 }
