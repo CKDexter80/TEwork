@@ -3,7 +3,7 @@ namespace Lecture.Farming
     /// <summary>
     /// A base farm animal class.
     /// </summary>
-    public class FarmAnimal : ISing //also all subclasses must implement ISing
+    public abstract class FarmAnimal : ISing //also all subclasses must implement ISing
     {
         /// <summary>
         /// The farm animal's name.

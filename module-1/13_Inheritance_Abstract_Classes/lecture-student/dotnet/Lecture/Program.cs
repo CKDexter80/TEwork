@@ -19,13 +19,10 @@ namespace Lecture
             Pig porky = new Pig();
             ISing[] singers = new ISing[] { dairyCow, johnDeere, porky };
             
-            //cant create an instance of interfaces
-           // ISing sing = new ISing();
+            
 
-            FarmAnimal chicken = new Chicken();
-            Chicken chicken2 = new Chicken();
-
-            Object o = new Object();
+           
+           //Object o = new Object();
 
             foreach (ISing singer in singers)
             {
