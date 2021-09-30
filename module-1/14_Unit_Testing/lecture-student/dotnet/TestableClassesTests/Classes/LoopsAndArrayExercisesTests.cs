@@ -15,5 +15,41 @@ namespace TestableClasses.Classes.Tests
         //.Contains() - Checks to see if collection contains a value/object
 
 
+        [TestMethod]
+        public void MiddleWay()
+        {
+            /*
+                *Arrange
+                *Act
+                *Assert
+            */
+            // arrange
+            LoopsAndArrayExercises loopsAndArrayExercises = new LoopsAndArrayExercises();
+            int[] firstParameter = { 1, 2, 3 };
+            int[] secondParameter = { 4, 5, 6 };
+
+            //act
+            int[] actual =  loopsAndArrayExercises.MiddleWay(firstParameter, secondParameter);
+            int[] expected = { 2, 5 };
+            //assert
+            CollectionAssert.AreEqual(expected, actual, "returned wrong numbers");
+        }
+
+        [TestMethod]
+        public void MaxEndThree()
+        {
+            //arrange
+            LoopsAndArrayExercises loopsAndArrayExercises = new LoopsAndArrayExercises();
+
+            //act
+            int[] a = { 1, 2, 3 };
+            int[] actual = loopsAndArrayExercises.MaxEnd3(a);
+            int[] expected = { 3, 3, 3 };
+
+            //assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+
     }
 }
