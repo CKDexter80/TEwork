@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    class HouseCat
-    {
-    }
+    //cant inherit from sealed class
+    //class HouseCat : Cat
+   // {
+    //}
 }
