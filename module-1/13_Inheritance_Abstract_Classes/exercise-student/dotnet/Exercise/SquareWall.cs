@@ -14,10 +14,15 @@ namespace Exercise
         public int SideLength { get; }
 
 
+        //public override string ToString()
+        //{
+        //    return $"{Name} ({SideLength}x{SideLength}) square";
+        //}
+          
         public override string ToString()
         {
-            return $"{Name} ({SideLength}x{SideLength}) square";
+            return $"{Name} ({Length}x{Height}) square";
         }
-        
+
     }
 }
