@@ -13,12 +13,12 @@ namespace Exercises.Tests
         {
             AnimalGroupName animalGroupName = new AnimalGroupName();
 
-            string inputL = "giraffe";
+            string input = "giraffe";
 
-            string expectedL = animalGroupName.GetHerd(inputL);
-            string actualL = "Tower";
+            string expected = animalGroupName.GetHerd(input);
+            string actual = "Tower";
 
-            Assert.AreEqual(expectedL, actualL);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -26,61 +26,60 @@ namespace Exercises.Tests
         {
             AnimalGroupName animalGroupName = new AnimalGroupName();
 
-            string inputU = "FLAMINGO";
+            string input = "FLAMINGO";
 
-            string expectedU = animalGroupName.GetHerd(inputU);
-            string actualU = "Pat";
+            string expected = animalGroupName.GetHerd(input);
+            string actual = "Pat";
 
-            Assert.AreEqual(expectedU, actualU);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void GetHerdWithMixedcaseString()
         {
             AnimalGroupName animalGroupName = new AnimalGroupName();
 
-            string inputM = "Rhino";
+            string input = "Rhino";
 
-            string expectedM = animalGroupName.GetHerd(inputM);
-            string actualM = "Crash";
+            string expected = animalGroupName.GetHerd(input);
+            string actual = "Crash";
 
-            Assert.AreEqual(expectedM, actualM);
+            Assert.AreEqual(expected, actual);
         }
         [DataTestMethod]
         [DataRow("walrus", "unknown")]
-        [DataRow("elephants", "unknown")]        
-        public void GetHerdWithNotFound(string input, string returned)
+        [DataRow("elephants", "unknown")]
+        public void GetHerdWithStringsNotFound(string input, string returned)
         {
             AnimalGroupName animalGroupName = new AnimalGroupName();
+                        
+            string actual = animalGroupName.GetHerd(input);
+            string expected = returned;
 
-            string inputNF = input;
-            string actualNF = animalGroupName.GetHerd(inputNF);
-            string expectedNF = returned;
-
-            Assert.AreEqual(expectedNF, actualNF);
+            Assert.AreEqual(expected, actual);
         }
-        [TestMethod]
+        /*[TestMethod]
         public void GetHerdWithNull()
         {
             AnimalGroupName animalGroupName = new AnimalGroupName();
 
-            string inputN = null;
+            string input = null;
 
-            string expectedN = animalGroupName.GetHerd(inputN);
-            string actualN = "unknown";
+            string expected = animalGroupName.GetHerd(input);
+            string actual = "unknown";
 
-            Assert.AreEqual(expectedN, actualN);
-        }
+            Assert.AreEqual(expected, actual);
+        }*/
         [TestMethod]
-        public void GetHerdWithEmpty()
+        public void GetHerdWithEmptyString()
         {
             AnimalGroupName animalGroupName = new AnimalGroupName();
 
-            string inputE = "";
+            string input = "";
 
-            string expectedE = animalGroupName.GetHerd(inputE);
-            string actualE = "unknown";
+            string expected = animalGroupName.GetHerd(input);
+            string actual = "unknown";
 
-            Assert.AreEqual(expectedE, actualE);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
