@@ -15,7 +15,22 @@ namespace ExceptionHandling
             * By using try/catch blocks, you can stop the Exception from exiting the method and provide
             * code to handle it.
             */
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Give Me Stuff to Break");
+
+            MathIsFun mif = new MathIsFun();
+
+            try
+            {
+                Console.WriteLine(mif.Multiply(3, 1000000000));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+
+            Console.WriteLine(mif.Divide(10, 0));
+            Console.WriteLine(mif.Divide(10, 1));
         }
     }
 }

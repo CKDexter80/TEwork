@@ -20,6 +20,15 @@ namespace Lecture.Aids
             // Create the full path
             string fullPath = Path.Combine(directory, filename);
 
+            using (StreamReader sr = new StreamReader(fullPath))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string currentLine = sr.ReadLine();
+                    Console.WriteLine(currentLine);
+                }
+            }
+
         }
     }
 }
