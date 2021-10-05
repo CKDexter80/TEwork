@@ -7,7 +7,7 @@ namespace QuizMaker
 {
     public class QuizExtractor
     {
-        public static List<Array> quizExtractor(string filePath)
+        public static List<Array> QuizExtraction(string filePath)
         {
             List<Array> quizHolder = new List<Array>();
             try
