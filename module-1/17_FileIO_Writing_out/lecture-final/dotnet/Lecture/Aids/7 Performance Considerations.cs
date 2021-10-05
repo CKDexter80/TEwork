@@ -10,6 +10,8 @@ namespace Lecture.Aids
         /// This piece of code demonstrates that there is a noticeable delay
         /// to open and close a Stream Writer 1500 times even if we are printing one word.
         /// </summary>
+        /// 
+        static int numberOfTimesToLoop = 150000;
         public static void SlowPerformance()
         {
             Stopwatch watch = new Stopwatch();
@@ -17,7 +19,7 @@ namespace Lecture.Aids
 
             watch.Start();
 
-            for (int i = 0; i < 1500; i++)
+            for (int i = 0; i < numberOfTimesToLoop; i++)
             {
                 using (StreamWriter sw = new StreamWriter("slow-file.txt", true))
                 {
@@ -42,7 +44,7 @@ namespace Lecture.Aids
 
             using (StreamWriter sw = new StreamWriter("fast-file.txt", true))
             {
-                for (int i = 0; i < 1500; i++)
+                for (int i = 0; i < numberOfTimesToLoop; i++)
                 {
                     sw.WriteLine("FAST");
                 }

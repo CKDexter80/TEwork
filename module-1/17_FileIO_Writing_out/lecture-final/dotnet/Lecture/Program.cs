@@ -8,8 +8,14 @@ namespace Lecture
         static void Main(string[] args)
         {
 
-            Console.Write("Press enter to finish");
-            Console.ReadLine();
+            //WritingTextFiles.WritingAFile();
+            //LoopingCollectionToWriteFile.LoopingADictionaryToWriteAFile();
+            //PerformanceDemo performanceDemo = new PerformanceDemo();
+            //performanceDemo.
+            // PerformanceDemo.SlowPerformance();
+            //PerformanceDemo.FastPerformance();
+            // ReadingAndWritingFiles.OpenAndWrite();
+            BinaryImageManipulator.ReadFileIn();
         }
     }
 }
