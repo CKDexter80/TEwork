@@ -22,28 +22,19 @@ namespace QuizMaker
 
             for (int i = 0; i < listOfQuizQuestions.Count; i++)
             {
-                Console.WriteLine(listOfQuizQuestions[i].Question);
+                Outputs.QuestionWrite(listOfQuizQuestions[i].Question);
 
-                foreach (KeyValuePair<int, string> answer in listOfQuizQuestions[i].Answers)
-                {
-                    Console.WriteLine($"{answer.Key} {answer.Value}");
-                }
+                DisplayAnswers.ShowAnswers(listOfQuizQuestions[i].Answers);
 
                 int answerToQuestion = Inputs.GetAnswer();
 
-
-                if (listOfQuizQuestions[i].Answers[answerToQuestion] == listOfQuizQuestions[i].CorrectAnswer)
-                {
-                    Console.WriteLine($"RIGHT!");
-                    questionsCorrect++;
-                }
-                else
-                {
-                    Console.WriteLine($"WRONG!");
-                }
+                int count = RightOrWrongAnswer.RightOrWrong(listOfQuizQuestions[i].CorrectAnswer, listOfQuizQuestions[i].Answers[answerToQuestion]);
+                
+                questionsCorrect += count;
             }
-            Console.WriteLine($"You got {questionsCorrect} answer(s) correct out of the {listOfQuizQuestions.Count} questions asked.");
-            
+
+            //see how you did
+            Outputs.FinalTally(questionsCorrect, listOfQuizQuestions.Count);
         }
     }
 }
