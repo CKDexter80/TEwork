@@ -6,7 +6,9 @@ namespace FizzWriter
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string destinationFilePath = Inputs.GetDestinationFilePath();
+
+            FizzBuzzWriter.FizzBuzzWriting(destinationFilePath);
         }
     }
 }

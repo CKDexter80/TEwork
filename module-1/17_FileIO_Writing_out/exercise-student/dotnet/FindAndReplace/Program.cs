@@ -6,7 +6,12 @@ namespace FindAndReplace
     {
 		public static void Main(string[] args)
 		{
-            Console.WriteLine("Hello World!");
+            string searchWord = Inputs.GetSearchWord();
+            string replacementWord = Inputs.GetReplacementWord();
+            string sourceFilePath = Inputs.GetSourceFilePath();
+            string destinationFilePath = Inputs.GetDestinationFilePath();
+
+            SearchReplace.SearchAndReplace(searchWord, replacementWord, sourceFilePath, destinationFilePath);
         }
     }
 }
