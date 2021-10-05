@@ -20,7 +20,7 @@ namespace WordSearch
             return search;
         }
 
-        public static bool IsCaseSensitivity()
+        public static bool IsCaseSensitive()
         {
             Console.WriteLine(@"Should the search be case sensitive? (Y\N)");
             string caseSensitivity = Console.ReadLine().ToLower();

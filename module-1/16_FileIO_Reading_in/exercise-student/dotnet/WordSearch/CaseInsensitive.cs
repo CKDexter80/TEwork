@@ -24,9 +24,7 @@ namespace WordSearch
                         {
                             Console.WriteLine($"{lineNumber}) {currentLine}");
                         }
-
                     }
-
                 }
 
             }

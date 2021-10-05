@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace QuizMaker
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string filePath = Inputs.getFilePath();
+            List<Array> quizHolder =  QuizExtractor.quizExtractor(filePath);
+
+            
+                       
+            
         }
     }
 }

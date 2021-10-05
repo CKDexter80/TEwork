@@ -7,10 +7,10 @@ namespace WordSearch
     public class Program
     {
         public static void Main(string[] args)
-        {                        
+        {
             string fullPath = Inputs.FullPath();
             string search = Inputs.SearchForThis();
-            bool isCaseSensitive = Inputs.IsCaseSensitivity();
+            bool isCaseSensitive = Inputs.IsCaseSensitive();
 
             if (isCaseSensitive)
             {
@@ -20,7 +20,7 @@ namespace WordSearch
             {
                 CaseInsensitive.caseInsensitiveSearch(fullPath, search);
             }
-            
+
         }
     }
 }
