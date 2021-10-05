@@ -34,6 +34,14 @@ namespace Lecture.Aids
 
             // Open up a streamwriter for the file to write to
 
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                foreach (KeyValuePair<string, double> programmingLanguage in programmingLanguages)
+                {
+                    sw.WriteLine($"{programmingLanguage.Key} is rated at {programmingLanguage.Value}");
+                }
+            }
+
         }
     }
 }
