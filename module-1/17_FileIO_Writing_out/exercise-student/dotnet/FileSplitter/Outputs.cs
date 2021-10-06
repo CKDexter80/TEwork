@@ -25,5 +25,12 @@ namespace FileSplitter
             Console.WriteLine($"For a {length} line input file \"{fileName}\", this produces {outputSize} output files.");
             Console.WriteLine();
         }
+
+        public static string SplitFileName(string filePath, int number)
+        {
+            string outputPath = GetNewFileName.NewFileName(filePath, number);
+            Console.WriteLine($"Generating {Path.GetFileName(outputPath)}");
+            return outputPath;
+        }
     }
 }

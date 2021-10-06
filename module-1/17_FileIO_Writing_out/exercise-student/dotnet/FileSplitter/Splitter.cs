@@ -30,8 +30,7 @@ namespace FileSplitter
                             splitFiles.Add(fileLine);
                         }
 
-                        string outputPath = GetNewFileName.NewFileName(filePath, i);
-                        Console.WriteLine($"Generating {Path.GetFileName(outputPath)}");
+                        string outputPath = Outputs.SplitFileName(filePath, i);
 
                         using (StreamWriter sw = new StreamWriter(outputPath))
                         {
