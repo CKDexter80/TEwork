@@ -1,0 +1,12 @@
+﻿using System.Collections.Generic;
+
+namespace Code_O_Ween
+{
+    interface ICandyTaker
+    {
+        List<string> Candy { get; set; }
+        string Costume { get; }
+        string Treat();
+        string Trick();
+    }
+}

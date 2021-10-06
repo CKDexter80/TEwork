@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Code_O_Ween</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ICandyTaker" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="ICandyTaker" />
+  </ItemGroup>
+
+</Project>
