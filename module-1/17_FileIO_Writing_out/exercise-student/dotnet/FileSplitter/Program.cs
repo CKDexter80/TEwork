@@ -6,7 +6,12 @@ namespace FileSplitter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string filePath = UserInputs.GetFilePath();
+            int lineNumber = UserInputs.GetNumberOfLinesInNewFiles();
+
+            Outputs.FileLineCount(filePath);
+            Outputs.TotalSplitFileCount(filePath, lineNumber);
+
         }
     }
 }
