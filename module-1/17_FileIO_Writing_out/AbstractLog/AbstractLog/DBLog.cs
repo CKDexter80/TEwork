@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AbstractLog
 {
-    class DBLogger : LogBase
+    class DBLog : LogBase
     {
         //database specific
         public override void Log(string message)

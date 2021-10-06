@@ -12,9 +12,10 @@ namespace AbstractLog
             {
                 FileLog fl = new FileLog();
                 fl.Log(message);
-            } else if (target == LogTypes.Database)
+            }
+            else if (target == LogTypes.Database)
             {
-                DBLogger db = new DBLogger();
+                DBLog db = new DBLog();
                 db.Log(message);
             }
         }

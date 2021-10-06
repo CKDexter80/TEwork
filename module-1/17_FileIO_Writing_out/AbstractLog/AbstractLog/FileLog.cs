@@ -7,9 +7,14 @@ namespace AbstractLog
 {
     public class FileLog : LogBase
     {
-        private static string location = Environment.CurrentDirectory;
-        private static string fileName = "log.txt";
-        private  static string fullPath = Path.Combine(location, fileName);
+        private string location { get; } = Environment.CurrentDirectory;
+        private string fileName { get; } = "log.txt";
+        private string fullPath { get; }
+
+        public FileLog()
+        {
+            fullPath = Path.Combine(location, fileName);
+        }
         public override void Log(string message)
         {
             using (StreamWriter sw = new StreamWriter(fullPath, true))
