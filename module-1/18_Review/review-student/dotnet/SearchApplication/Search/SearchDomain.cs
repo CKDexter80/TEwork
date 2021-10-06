@@ -13,10 +13,10 @@ namespace SearchApplication.Search
         public string Folder { get; }
         public IList<string> Files { get; }
 
-		/// <summary>
-		/// Create a Search Domain of a folder
-		/// </summary>
-		/// <param name="folder">Path of folder to index</param>
+        /// <summary>
+        /// Create a Search Domain of a folder
+        /// </summary>
+        /// <param name="folder">Path of folder to index</param>
         public SearchDomain(string folder)
         {
             Folder = folder;
@@ -28,8 +28,18 @@ namespace SearchApplication.Search
             IList<string> files = new List<string>();
             // Step Three: Complete the BuildDomain method
 
-
-
+            if (Directory.Exists(Folder)
+            {
+                string[] currentFiles = Directory.GetFiles(Folder);
+                foreach (string currentFile in currentFiles)
+                {
+                    files.Add(currentFile);
+                }
+            }
+            else
+            {
+                throw new SearchDomainException($"Folder {Folder} was not found");
+            }
             return files;
         }
 

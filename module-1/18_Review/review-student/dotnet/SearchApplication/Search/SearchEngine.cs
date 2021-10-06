@@ -18,7 +18,19 @@ namespace SearchApplication.Search
         public void IndexFiles()
         {
             // Step Five: Index files
+            //needs a try/catch
+            for (int i = 0; i < domain.Files.Count; i++)
+            {
+                using (StreamReader sr = new StreamReader(domain.Files[i]))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+                        IndexWords(i, line);
+                    }
+                }
 
+            }
 
         }
 

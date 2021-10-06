@@ -12,6 +12,8 @@ namespace FileSplitter
             Outputs.FileLineCount(filePath);
             Outputs.TotalSplitFileCount(filePath, lineNumber);
 
+            Splitter.SplitText(filePath, lineNumber);
+
         }
     }
 }

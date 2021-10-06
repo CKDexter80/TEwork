@@ -13,13 +13,14 @@ namespace SearchApplication
             {
                 // Step Two: Create TELog, and log the start of the application.
                 //
-
+                TELog.Log("Search application started");
 
 
                 // Step Four: Instantiate a Search Domain
                 //
 
-
+                SearchDomain sd = new SearchDomain("data");
+                TELog.Log(sd.ToString());
 
                 // Step Six: Single word search
                 //
