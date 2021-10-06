@@ -12,6 +12,7 @@ namespace FileSplitter
             int outputSize = FileMethods.GetFileOutputSize(filePath, fileSize);
             
             Console.WriteLine("**GENERATING OUTPUT**");
+            Console.WriteLine();
 
             //This is sweaty, I know...
             try

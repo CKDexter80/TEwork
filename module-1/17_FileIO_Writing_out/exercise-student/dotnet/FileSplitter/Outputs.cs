@@ -23,6 +23,7 @@ namespace FileSplitter
             Console.WriteLine("Each file that is created must have a sequential number assigned to it.");
             Console.WriteLine();
             Console.WriteLine($"For a {length} line input file \"{fileName}\", this produces {outputSize} output files.");
+            Console.WriteLine();
         }
     }
 }
