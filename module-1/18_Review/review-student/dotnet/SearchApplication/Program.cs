@@ -24,12 +24,42 @@ namespace SearchApplication
 
                 // Step Six: Single word search
                 //
+                //SearchEngine se = new SearchEngine(sd);
+                //se.IndexFiles();
+                //IList<string> searchResults = se.Search("tootie");
+
+                //if (searchResults.Count == 0)
+                //{
+                //    Console.WriteLine("No files found");
+                //}
+                //else
+                //{
+                //    foreach (string result in searchResults)
+                //    {
+                //        Console.WriteLine(result);
+                //    }
+                //}
+
 
 
 
                 // Step Seven: Multiple word search
                 //
+                SearchEngine se = new SearchEngine(sd);
+                se.IndexFiles();
+                IList<string> searchResults = se.Search("telephone line");
 
+                if (searchResults.Count == 0)
+                {
+                    Console.WriteLine("No files found");
+                }
+                else
+                {
+                    foreach (string result in searchResults)
+                    {
+                        Console.WriteLine(result);
+                    }
+                }
 
 
             }

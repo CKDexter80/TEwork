@@ -11,10 +11,19 @@ namespace SearchApplication.Util
         public static void Log(string message)
         {
             //ADD TRY/CATCH
-            using (StreamWriter sw = new StreamWriter("logs/search.log", true))
+            try
             {
-                sw.WriteLine(message);
+                using (StreamWriter sw = new StreamWriter("logs/search.log", true))
+                {
+                    sw.WriteLine(message);
+                }
             }
+            catch (Exception e)
+            {
+
+               Console.WriteLine(e.Message); ;
+            }
+            
         }
     }
 }

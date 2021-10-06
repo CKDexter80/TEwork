@@ -28,7 +28,7 @@ namespace SearchApplication.Search
             IList<string> files = new List<string>();
             // Step Three: Complete the BuildDomain method
 
-            if (Directory.Exists(Folder)
+            if (Directory.Exists(Folder))
             {
                 string[] currentFiles = Directory.GetFiles(Folder);
                 foreach (string currentFile in currentFiles)
