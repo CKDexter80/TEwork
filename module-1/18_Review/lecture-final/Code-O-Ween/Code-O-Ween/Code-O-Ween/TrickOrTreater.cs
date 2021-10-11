@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Code_O_Ween
 {
-    class TrickOrTreater : Kid, ICandyTaker
+    public class TrickOrTreater : Kid, ICandyTaker
     {
         public List<string> Candy { get; set; } = new List<string>();
 
