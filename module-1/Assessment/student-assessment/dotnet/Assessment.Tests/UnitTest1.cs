@@ -8,6 +8,7 @@ namespace Assessment.Tests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
