@@ -16,8 +16,8 @@ namespace Assessment
             //creating full path from input file
             //I'm sorry, but I had to hard code MY directory for the file
             //I swear it works
-            string directory = @"C:\Users\Student\workspace\rkaiser-c\module-1\Assessment\student-assessment\dotnet\Assessment\Data";
-            string inputFile = "CarInput.csv";
+            string directory = Environment.CurrentDirectory;
+            string inputFile = "DATA/CarInput.csv";
             string inputFullPath = Path.Combine(directory, inputFile);
             
 
