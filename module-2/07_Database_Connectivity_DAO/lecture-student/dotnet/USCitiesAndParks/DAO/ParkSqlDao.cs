@@ -16,7 +16,24 @@ namespace USCitiesAndParks.DAO
 
         public Park GetPark(int parkId)
         {
-            throw new NotImplementedException();
+            Park park = null;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = "SELECT park_id, park_name, date_established, area, has_camping FROM park WHERE park_id = @park_id;";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@park_id", parkId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    park = CreateParkFromReader(reader);
+                }
+            }
+
+            return park;
         }
 
         public IList<Park> GetParksByState(string stateAbbreviation)
@@ -51,7 +68,13 @@ namespace USCitiesAndParks.DAO
 
         private Park CreateParkFromReader(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            Park park = new Park();
+
+            park.ParkId = Convert.ToInt32(reader["park_id"]);
+            park.ParkName = Convert.ToString(reader["park_name"]);
+            park.DateEstablished = Convert.ToDateTime(reader["date_established"]);
+            park.Area = Convert.ToDecimal(reader["area"]);
+            park.HasCamping = Convert.ToBoolean(reader["has_camping"]);
         }
     }
 }

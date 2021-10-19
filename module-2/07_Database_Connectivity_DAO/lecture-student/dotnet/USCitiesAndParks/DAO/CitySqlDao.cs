@@ -18,10 +18,12 @@ namespace USCitiesAndParks.DAO
         {
             City city = null;
 
+            //try catch should be here! problems happen with Open() in particular
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT city_id, city_name, state_abbreviation, population, area FROM city WHERE city_id = @city_id;", conn);
+                //parameterize query to avoid SQL injections
                 cmd.Parameters.AddWithValue("@city_id", cityId);
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -88,7 +90,7 @@ namespace USCitiesAndParks.DAO
                 cmd.Parameters.AddWithValue("@population", city.Population);
                 cmd.Parameters.AddWithValue("@area", city.Area);
                 cmd.Parameters.AddWithValue("@city_id", city.CityId);
-
+                //not expecting any rows from db
                 cmd.ExecuteNonQuery();
             }
         }
