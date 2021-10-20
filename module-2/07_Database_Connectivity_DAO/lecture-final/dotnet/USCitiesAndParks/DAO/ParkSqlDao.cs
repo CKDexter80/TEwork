@@ -75,10 +75,11 @@ namespace USCitiesAndParks.DAO
             // park_name, date_established, area, has_camping 
 
             Park park = new Park();
-            //park.ParkId = Convert.ToInt32(reader[""])
+            //park.ParkId = Convert.ToInt32(reader[""]) //do we need id or not
             park.ParkName = Convert.ToString(reader["park_name"]);
             park.DateEstablished = Convert.ToDateTime(reader["date_established"]);
             park.HasCamping = Convert.ToBoolean(reader["has_camping"]);
+            park.Area = Convert.ToDecimal(reader["area"]);
 
             return park;
         }
