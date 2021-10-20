@@ -130,26 +130,7 @@ namespace EmployeeProjects.DAO
 
                     string sqlStatement =
                         "DELETE FROM project_employee " +
-                        "WHERE project_id = @projectId;";
-
-                    SqlCommand cmd = new SqlCommand(sqlStatement, conn);
-                    cmd.Parameters.AddWithValue("@projectId", projectId);
-
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string sqlStatement =
+                        "WHERE project_id = @projectId; " +
                         "DELETE FROM project " +
                         "WHERE project_id = @projectId;";
 
@@ -164,6 +145,7 @@ namespace EmployeeProjects.DAO
 
                 throw;
             }
+           
         }
 
         private Project CreateProjectFromReader(SqlDataReader reader)
