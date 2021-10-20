@@ -22,14 +22,15 @@ namespace EmployeeProjects.DAO
             {
                 conn.Open();
 
-                string sql = "SELECT employee_id, " +
-                    "department_id, " +
-                    "first_name, " +
-                    "last_name, " +
-                    "birth_date, " +
-                    "hire_date " +
+                string sqlStatement =
+                    "SELECT employee_id, " +
+                        "department_id, " +
+                        "first_name, " +
+                        "last_name, " +
+                        "birth_date, " +
+                        "hire_date " +
                     "FROM employee;";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlCommand cmd = new SqlCommand(sqlStatement, conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -47,22 +48,23 @@ namespace EmployeeProjects.DAO
         public IList<Employee> SearchEmployeesByName(string firstNameSearch, string lastNameSearch)
         {
             IList<Employee> employeesByName = new List<Employee>();
-           
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                string sql = "SELECT employee_id, " +
-                    "department_id, " +
-                    "first_name, " +
-                    "last_name, " +
-                    "birth_date, " +
-                    "hire_date " +
+                string sqlStatement =
+                    "SELECT employee_id, " +
+                        "department_id, " +
+                        "first_name, " +
+                        "last_name, " +
+                        "birth_date, " +
+                        "hire_date " +
                     "FROM employee " +
                     "WHERE first_name LIKE '%' + @firstNameSearch + '%' " +
-                    "AND last_name LIKE '%' + @lastNameSearch + '%';";
+                        "AND last_name LIKE '%' + @lastNameSearch + '%';";
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlCommand cmd = new SqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@firstNameSearch", firstNameSearch);
                 cmd.Parameters.AddWithValue("@lastNameSearch", lastNameSearch);
 
@@ -73,7 +75,7 @@ namespace EmployeeProjects.DAO
                     Employee employee = CreateEmployeeFromReader(reader);
                     employeesByName.Add(employee);
                 }
-            }            
+            }
 
             return employeesByName;
         }
@@ -81,31 +83,42 @@ namespace EmployeeProjects.DAO
         public IList<Employee> GetEmployeesByProjectId(int projectId)
         {
             IList<Employee> employeesByProject = new List<Employee>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
 
-                string sql = "SELECT employee.employee_id, " +
-                    "employee.department_id, " +
-                    "employee.first_name, " +
-                    "employee.last_name, " +
-                    "employee.birth_date, " +
-                    "employee.hire_date " +
-                    "FROM employee " +
-                    "JOIN project_employee ON employee.employee_id = project_employee.employee_id " +
-                    "WHERE project_employee.project_id = @projectId;";
-
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@projectId", projectId);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    Employee employee = CreateEmployeeFromReader(reader);
-                    employeesByProject.Add(employee);
+                    conn.Open();
+
+                    string sqlStatement =
+                        "SELECT employee.employee_id, " +
+                            "employee.department_id, " +
+                            "employee.first_name, " +
+                            "employee.last_name, " +
+                            "employee.birth_date, " +
+                            "employee.hire_date " +
+                        "FROM employee " +
+                        "JOIN project_employee ON employee.employee_id = project_employee.employee_id " +
+                        "WHERE project_employee.project_id = @projectId;";
+
+                    SqlCommand cmd = new SqlCommand(sqlStatement, conn);
+                    cmd.Parameters.AddWithValue("@projectId", projectId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Employee employee = CreateEmployeeFromReader(reader);
+                        employeesByProject.Add(employee);
+                    }
+
                 }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
             return employeesByProject;
@@ -113,17 +126,102 @@ namespace EmployeeProjects.DAO
 
         public void AddEmployeeToProject(int projectId, int employeeId)
         {
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sqlStatement =
+                        "INSERT INTO project_employee (project_id, employee_id) " +
+                        "VALUES (@projectId, @employeeId);";
+                    SqlCommand cmd = new SqlCommand(sqlStatement, conn);
+                    cmd.Parameters.AddWithValue("@projectId", projectId);
+                    cmd.Parameters.AddWithValue("@employeeId", employeeId);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
 
         }
 
         public void RemoveEmployeeFromProject(int projectId, int employeeId)
         {
+            try
+            {
 
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sqlStatement =
+                        "DELETE FROM project_employee " +
+                        "WHERE project_id = @projectId AND employee_id = @employeeId;";
+                    SqlCommand cmd = new SqlCommand(sqlStatement, conn);
+                    cmd.Parameters.AddWithValue("@projectId", projectId);
+                    cmd.Parameters.AddWithValue("@employeeId", employeeId);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public IList<Employee> GetEmployeesWithoutProjects()
         {
-            return new List<Employee>();
+            IList<Employee> employeesNoProjects = new List<Employee>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sqlStatement = "SELECT employee.employee_id, " +
+                        "employee.department_id, " +
+                        "employee.first_name, " +
+                        "employee.last_name, " +
+                        "employee.birth_date, " +
+                        "employee.hire_date, " +
+                        "project_employee.project_id " +
+                        "FROM employee " +
+                        "LEFT JOIN project_employee ON employee.employee_id = project_employee.employee_id " +
+                        "WHERE project_employee.project_id IS NULL;";
+
+                    SqlCommand cmd = new SqlCommand(sqlStatement, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Employee employee = CreateEmployeeFromReader(reader);
+                        employeesNoProjects.Add(employee);
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return employeesNoProjects;
         }
 
         private Employee CreateEmployeeFromReader(SqlDataReader reader)
