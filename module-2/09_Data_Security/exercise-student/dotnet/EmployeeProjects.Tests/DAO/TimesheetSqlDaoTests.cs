@@ -15,67 +15,114 @@ namespace EmployeeProjects.Tests.DAO
         private static readonly Timesheet TIMESHEET_4 = new Timesheet(4, 2, 2, DateTime.Parse("2021-02-01"), 2.0M, false, "Timesheet 4");
 
         private TimesheetSqlDao dao;
+        private Timesheet testTimesheet;
 
 
         [TestInitialize]
         public override void Setup()
         {
             dao = new TimesheetSqlDao(ConnectionString);
+            testTimesheet = new Timesheet(0, 2, 1, DateTime.Parse("10/12/2021"), 3M, true, "Timesheet test");
             base.Setup();
         }
 
         [TestMethod]
         public void GetTimesheet_ReturnsCorrectTimesheetForId()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(1);
+
+            AssertTimesheetsMatch(TIMESHEET_1, timesheet);
         }
 
         [TestMethod]
         public void GetTimesheet_ReturnsNullWhenIdNotFound()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(5);
+
+            Assert.IsNull(timesheet);
+
         }
 
         [TestMethod]
         public void GetTimesheetsByEmployeeId_ReturnsListOfAllTimesheetsForEmployee()
         {
-            Assert.Fail();
+            IList<Timesheet> timesheetsByEmployeeId = dao.GetTimesheetsByEmployeeId(2);
+
+            Assert.AreEqual(2, timesheetsByEmployeeId.Count);
+            AssertTimesheetsMatch(TIMESHEET_3, timesheetsByEmployeeId[0]);
+            AssertTimesheetsMatch(TIMESHEET_4, timesheetsByEmployeeId[1]);
+
         }
 
         [TestMethod]
         public void GetTimesheetsByProjectId_ReturnsListOfAllTimesheetsForProject()
         {
-            Assert.Fail();
+            IList<Timesheet> timesheetsByProjectId = dao.GetTimesheetsByProjectId(1);
+
+            Assert.AreEqual(3, timesheetsByProjectId.Count);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheetsByProjectId[0]);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheetsByProjectId[1]);
+            AssertTimesheetsMatch(TIMESHEET_3, timesheetsByProjectId[2]);
         }
 
         [TestMethod]
         public void CreateTimesheet_ReturnsTimesheetWithIdAndExpectedValues()
         {
-            Assert.Fail();
+            Timesheet createdTimesheet = dao.CreateTimesheet(testTimesheet);
+            int createdTimesheetId = createdTimesheet.TimesheetId;
+
+            Assert.IsTrue(createdTimesheetId > 0);
+
+            testTimesheet.TimesheetId = createdTimesheetId;
+
+            AssertTimesheetsMatch(testTimesheet, createdTimesheet);
+
         }
 
         [TestMethod]
         public void CreatedTimesheetHasExpectedValuesWhenRetrieved()
         {
-            Assert.Fail();
+            Timesheet createdTimessheet = dao.CreateTimesheet(testTimesheet);
+            int newId = createdTimessheet.TimesheetId;
+            Timesheet retrievedTimesheet = dao.GetTimesheet(newId);
+
+            AssertTimesheetsMatch(createdTimessheet, retrievedTimesheet);
+
         }
 
         [TestMethod]
         public void UpdatedTimesheetHasExpectedValuesWhenRetrieved()
         {
-            Assert.Fail();
+            Timesheet timesheetToUpdate = dao.GetTimesheet(2);
+            timesheetToUpdate.IsBillable = false;
+            timesheetToUpdate.HoursWorked = 66;
+            timesheetToUpdate.Description = "UPDATE";
+
+            dao.UpdateTimesheet(timesheetToUpdate);
+            Timesheet updatedTimesheet = dao.GetTimesheet(2);
+
+            AssertTimesheetsMatch(timesheetToUpdate, updatedTimesheet);
+
         }
 
         [TestMethod]
         public void DeletedTimesheetCantBeRetrieved()
         {
-            Assert.Fail();
+            dao.DeleteTimesheet(1);
+            Timesheet deletedTimesheet = dao.GetTimesheet(1);
+            Assert.IsNull(deletedTimesheet);
         }
 
         [TestMethod]
         public void GetBillableHours_ReturnsCorrectTotal()
         {
-            Assert.Fail();
+            decimal billableHours = dao.GetBillableHours(1, 1);
+
+            Assert.AreEqual(2.5M, billableHours);
+
+            decimal billableHoursWithUnbillable = dao.GetBillableHours(2, 2);
+
+            Assert.AreEqual(0, billableHoursWithUnbillable);
         }
 
         private void AssertTimesheetsMatch(Timesheet expected, Timesheet actual)

@@ -2,42 +2,74 @@ Bug 1
 -----
 Test that demonstrates problem:
 
+   GetTimesheetsByEmployeeId_ReturnsListOfAllTimesheetsForEmployee()
+
 Expected output:
+
+   GetTimesheetsByEmployeeId(2) should return a List with a .Count of 2
 
 Actual output:
 
+   GetTimesheetsByEmployeeId(2) return a List with a .Count of 1
+
 How did you fix this bug?
 
+   In GetTimesheetsByEmployeeId, changed 'if' statement to 'while' loop, to allow for iteration over the entire provided 
+   reader-stream to create a fully populated List. 
 
 Bug 2
 -----
 Test that demonstrates problem:
 
+   GetTimesheetsByProjectId_ReturnsListOfAllTimesheetsForProject()
+
 Expected output:
+
+   GetTimesheetsByProjectId(1) should return a List with a .Count of 3
 
 Actual output:
 
+   GetTimesheetsByProjectId(1) returned a List with a .Count of 2
+
 How did you fix this bug?
 
+   In GetTimesheetsByProjectId, changed "WHERE employee_id = @project_id" to "WHERE project_id = @project_id" within the SQL statement
+   as the returned rows had, incorrectly, employee_id set to the provided parameter.
 
 Bug 3
 -----
 Test that demonstrates problem:
 
+   UpdatedTimesheetHasExpectedValuesWhenRetrieved
+
 Expected output:
+
+   The bool value of updatedTimesheet.IsBillable should be false
 
 Actual output:
 
+   The bool value of updatedTimesheet.IsBillable was false
+
 How did you fix this bug?
 
+   In UpdateTimesheet in the SET clause within in the SQL statement, added "is_billable = @is_billable" 
+   after the "hours_worked = @hours_worked" target/value expression, as the'is_billble' target was not being updated.
 
 Bug 4
 -----
 Test that demonstrates problem:
 
+   GetBillableHours_ReturnsCorrectTotal
+
 Expected output:
+
+   The decimal value of GetBillableHours(2, 2) should be 0;
 
 Actual output:
 
+   The decimal value of GetBillableHours(2, 2) was 2.0;
+
 How did you fix this bug?
 
+   In GetBillableHours, added "AND is_billable = 1;" to the end of the WHERE clause in the SQL statement,
+   as the previous statement was not accounting for the billable status of the timesheet;

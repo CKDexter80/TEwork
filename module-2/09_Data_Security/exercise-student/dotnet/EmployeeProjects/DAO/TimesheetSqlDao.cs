@@ -53,7 +53,7 @@ namespace EmployeeProjects.DAO
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
+                while (reader.Read())
                 {
                     Timesheet timesheet = CreateTimesheetFromReader(reader);
                     timesheets.Add(timesheet);
@@ -73,7 +73,7 @@ namespace EmployeeProjects.DAO
 
                 SqlCommand cmd = new SqlCommand("SELECT timesheet_id, employee_id, project_id, date_worked, hours_worked, is_billable, description " +
                                                 "FROM timesheet " +
-                                                "WHERE employee_id = @project_id " +
+                                                "WHERE project_id = @project_id " +
                                                 "ORDER BY timesheet_id;", conn);
                 cmd.Parameters.AddWithValue("@project_id", projectId);
 
@@ -118,7 +118,7 @@ namespace EmployeeProjects.DAO
 
                 SqlCommand cmd = new SqlCommand("UPDATE timesheet " +
                                                 "SET employee_id = @employee_id, project_id = @project_id, date_worked = @date_worked, " +
-                                                "hours_worked = @hours_worked, description = @description " +
+                                                "hours_worked = @hours_worked, is_billable = @is_billable, description = @description " +
                                                 "WHERE timesheet_id = @timesheet_id;", conn);
                 cmd.Parameters.AddWithValue("@employee_id", updatedTimesheet.EmployeeId);
                 cmd.Parameters.AddWithValue("@project_id", updatedTimesheet.ProjectId);
@@ -153,7 +153,7 @@ namespace EmployeeProjects.DAO
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT SUM(hours_worked) AS billable_hours " +
                                                 "FROM timesheet " +
-                                                "WHERE employee_id = @employee_id AND project_id = @project_id;", conn);
+                                                "WHERE employee_id = @employee_id AND project_id = @project_id AND is_billable = 1;", conn);
                 cmd.Parameters.AddWithValue("@employee_id", employeeId);
                 cmd.Parameters.AddWithValue("@project_id", projectId);
 
