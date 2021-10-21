@@ -10,7 +10,7 @@ Expected output:
 
 Actual output:
 
-   GetTimesheetsByEmployeeId(2) return a List with a .Count of 1
+   GetTimesheetsByEmployeeId(2) returned a List with a .Count of 1
 
 How did you fix this bug?
 
@@ -48,7 +48,7 @@ Expected output:
 
 Actual output:
 
-   The bool value of updatedTimesheet.IsBillable was false
+   The bool value of updatedTimesheet.IsBillable was true
 
 How did you fix this bug?
 
