@@ -43,19 +43,19 @@ namespace HotelApp
                 }
                 else if (menuSelection == 1)
                 {
-                    Console.WriteLine("Not implemented");
+                    PrintHotels(GetHotels());
                 }
                 else if (menuSelection == 2)
                 {
-                    Console.WriteLine("Not implemented");
+                    PrintReviews(GetReviews());
                 }
                 else if (menuSelection == 3)
                 {
-                    Console.WriteLine("Not implemented");
+                    PrintHotel(GetHotelIdOne());
                 }
                 else if (menuSelection == 4)
                 {
-                    Console.WriteLine("Not implemented");
+                    PrintReviews(GetHotelReviewsIdOne());
                 }
                 else if (menuSelection == 5)
                 {
@@ -76,9 +76,37 @@ namespace HotelApp
 
         //API methods:
 
+        private static List<Hotel> GetHotels()
+        {
+            RestRequest request = new RestRequest(API_URL + "hotels");
+            IRestResponse<List<Hotel>> response = client.Get<List<Hotel>>(request);
+            return response.Data;
+            
+        }
 
+        private static List<Review> GetReviews()
+        {
+            RestRequest request = new RestRequest(API_URL + "reviews");
+            IRestResponse < List < Review >> response = client.Get<List<Review>>(request);
+            return response.Data;
 
+        }
 
+        private static Hotel GetHotelIdOne()
+        {
+            RestRequest request = new RestRequest(API_URL + "hotels/1");
+            IRestResponse<Hotel> response = client.Get<Hotel>(request);
+            return response.Data;
+
+        }
+
+        private static List<Review> GetHotelReviewsIdOne()
+        {
+            RestRequest request = new RestRequest(API_URL + "hotels/1/reviews");
+            IRestResponse <List<Review>> response = client.Get<List<Review>>(request);
+            return response.Data;
+
+        }
 
         //Print methods:
 
