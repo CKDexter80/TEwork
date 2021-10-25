@@ -21,25 +21,40 @@ namespace LocationApp
         {
             RestRequest requestOne = new RestRequest(API_URL + "/" + locationId);
             IRestResponse<Location> response = client.Get<Location>(requestOne);
-            return response.Data;
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                throw new Exception("An error occurred communicating with the server.", response.ErrorException);
+            }
+            else if (!response.IsSuccessful)
+            {
+                throw new Exception("An error response was received from the server. The status code is " + (int)response.StatusCode);
+            }
+            else
+            {
+                return response.Data;
+            }
         }
 
         public Location AddLocation(Location newLocation)
         {
-            //api code here
-            return null;
+            RestRequest request = new RestRequest(API_URL);
+            request.AddJsonBody(newLocation);
+            IRestResponse<Location> response = client.Post<Location>(request);
+            return response.Data;
         }
 
         public Location UpdateLocation(Location locationToUpdate)
         {
-            //api code here
-            return null;
+            RestRequest request = new RestRequest(API_URL + "/" + locationToUpdate.Id);
+            request.AddJsonBody(locationToUpdate);
+            IRestResponse<Location> response = client.Put<Location>(request);
+            return response.Data;
         }
 
         public bool DeleteLocation(int locationId)
         {
-            //api code here
-            return false;
+            RestRequest request = new RestRequest(API_URL + "/" + locationId);
+            IRestResponse response = client.Delete(request);
         }
     }
 }
