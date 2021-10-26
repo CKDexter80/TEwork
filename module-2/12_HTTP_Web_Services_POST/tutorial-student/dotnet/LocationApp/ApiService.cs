@@ -55,6 +55,19 @@ namespace LocationApp
         {
             RestRequest request = new RestRequest(API_URL + "/" + locationId);
             IRestResponse response = client.Delete(request);
+
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                throw new Exception("An error occurred communicating with the server.", response.ErrorException);
+            }
+            else if (!response.IsSuccessful)
+            {
+                throw new Exception("An error response was received from the server. The status code is " + (int)response.StatusCode);
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
