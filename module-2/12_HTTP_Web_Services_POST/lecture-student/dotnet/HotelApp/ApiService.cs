@@ -80,17 +80,57 @@ namespace HotelApp
 
         public Reservation AddReservation(Reservation newReservation)
         {
-            throw new NotImplementedException();
+            /*
+             * POST
+             * 
+             * http://localhost:3000/reservations
+             * 
+             */
+            RestRequest request = new RestRequest(API_URL + "reservations");
+
+            request.AddJsonBody(newReservation);
+
+            IRestResponse<Reservation> response = client.Post<Reservation>(request);
+
+            HandleResponse(response);
+            return response.Data;
+
+
+
         }
 
         public Reservation UpdateReservation(Reservation reservationToUpdate)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + "reservations/" + reservationToUpdate.Id);
+            request.AddJsonBody(reservationToUpdate);
+            IRestResponse<Reservation> response = client.Put<Reservation>(request);
+
+            HandleResponse(response);
+            return response.Data;
+
         }
 
         public bool DeleteReservation(int reservationId)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + "reservations/" + reservationId);
+            IRestResponse response = client.Delete(request);
+
+            HandleResponse(response);
+
+            return true;
+
+        }
+
+        private void HandleResponse(IRestResponse resonse)
+        {
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                throw new Exception("Error occurred - unable to reach server.", response.ErrorException);
+            }
+            else if (!response.IsSuccessful)
+            {
+                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
         }
     }
 }
