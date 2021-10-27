@@ -38,13 +38,9 @@ namespace HotelApp
         {
             string url = API_URL;
             if (hotelId != 0)
-            {
                 url += $"hotels/{hotelId}/reservations";
-            }
             else
-            {
                 url += "reservations";
-            }
 
             RestRequest request = new RestRequest(url);
             IRestResponse<List<Reservation>> response = client.Get<List<Reservation>>(request);
@@ -83,12 +79,7 @@ namespace HotelApp
         }
 
         public Reservation AddReservation(Reservation newReservation)
-        {/*
-          * 
-          * POST
-          * http://localhost:3000/reservations
-          * 
-          */
+        {
             RestRequest request = new RestRequest(API_URL + "reservations");
             request.AddJsonBody(newReservation);
             IRestResponse<Reservation> response = client.Post<Reservation>(request);
@@ -105,7 +96,6 @@ namespace HotelApp
             {
                 return response.Data;
             }
-
         }
 
         public Reservation UpdateReservation(Reservation reservationToUpdate)
@@ -114,24 +104,6 @@ namespace HotelApp
             request.AddJsonBody(reservationToUpdate);
             IRestResponse<Reservation> response = client.Put<Reservation>(request);
 
-            HandleResponse(response);
-            return response.Data;
-            
-        }
-
-        public bool DeleteReservation(int reservationId)
-        {
-
-            RestRequest request = new RestRequest(API_URL + "reservations/" + reservationId);
-            IRestResponse response = client.Delete(request);
-
-            HandleResponse(response);
-            return true;
-            
-        }
-
-        private void HandleResponse(IRestResponse response)
-        {
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
                 throw new Exception("Error occurred - unable to reach server.", response.ErrorException);
@@ -139,6 +111,29 @@ namespace HotelApp
             else if (!response.IsSuccessful)
             {
                 throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return response.Data;
+            }
+        }
+
+        public bool DeleteReservation(int reservationId)
+        {
+            RestRequest request = new RestRequest(API_URL + "reservations/" + reservationId);
+            IRestResponse response = client.Delete(request);
+
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                throw new Exception("Error occurred - unable to reach server.", response.ErrorException);
+            }
+            else if (!response.IsSuccessful)
+            {
+                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return true;
             }
         }
     }
