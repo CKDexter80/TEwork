@@ -58,6 +58,10 @@ namespace HotelReservations.DAO
 
         public Reservation Create(Reservation reservation)
         {
+            // ?? null coalescing operator 
+            // => lamda function r "maps to" r.Id
+            // .Max largerst number
+            // set maxId to largest value of r.Id (List<Reservations>.Id), unless it is null, then set to 0
             int maxId = Reservations.Max(r => r.Id) ?? 0;
             reservation.Id = maxId + 1;
             Reservations.Add(reservation);
