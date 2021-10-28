@@ -31,7 +31,7 @@ namespace HotelReservations.Controllers
 
             if (hotel != null)
             {
-                return hotel;
+                return Ok(hotel);
             }
             else
             {
@@ -84,6 +84,35 @@ namespace HotelReservations.Controllers
             return Created($"/reservations/{added.Id}", added);
         }
 
+        [HttpPut("reservations/{id}")]
+        public ActionResult<Reservation> UpdateReservation(int id, Reservation reservation)
+        {
+            Reservation reservationExists = reservationDao.Get(id);
 
+            if (reservationExists == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(reservationDao.Update(id, reservation));
+            }
+
+        }
+
+        [HttpDelete("reservations/{id}")]
+        public ActionResult DeleteReservation(int id)
+        {
+
+            if (reservationDao.Delete(id))
+            {
+                return NoContent();
+            }
+            else
+            {
+                return NotFound("Reservation does not exist");
+            }
+
+        }
     }
 }
