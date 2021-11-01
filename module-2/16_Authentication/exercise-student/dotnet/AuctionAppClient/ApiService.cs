@@ -147,14 +147,25 @@ namespace AuctionApp
             else if (!response.IsSuccessful)
             {
 
+                if ((int)response.StatusCode == 401)
+                {
+                    throw new UnauthorizedException("Error occured - unauthorized user");
+                }
+                else if ((int)response.StatusCode == 403)
+                {
+                    throw new ForbiddenException("Error occured - access is forbidden");
+                }
+
+                throw new NonSuccessException((int)response.StatusCode);
             }
         }
 
         public ApiUser Login(string submittedName, string submittedPass)
         {
-
-
-            IRestResponse<ApiUser> response = null;
+            LoginUser loginUser = new LoginUser { Username = submittedName, Password = submittedPass };
+            RestRequest request = new RestRequest(API_BASE_URL + "login");
+            request.AddJsonBody(loginUser);
+            IRestResponse<ApiUser> response = client.Post<ApiUser>(request);
 
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
