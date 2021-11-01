@@ -8,6 +8,7 @@ namespace HotelReservations.Controllers
 {
     [Route("/")]
     [ApiController]
+    [Authorize]
     public class HotelsController : ControllerBase
     {
         private static IHotelDao _hotelDao;
@@ -27,6 +28,7 @@ namespace HotelReservations.Controllers
         }
 
         [HttpGet("hotels")]
+        [AllowAnonymous]
         public List<Hotel> ListHotels()
         {
             return _hotelDao.List();
@@ -127,6 +129,7 @@ namespace HotelReservations.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("reservations/{id}")]
         public ActionResult DeleteReservation(int id)
         {
