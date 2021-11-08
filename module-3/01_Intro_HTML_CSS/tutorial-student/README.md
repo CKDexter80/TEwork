@@ -1,10 +1,10 @@
 # Intro to HTML and CSS Tutorial
 
-You recently landed an internship with a new startup called PNN, the Puppy News Network. So far, their writers have produced three articles, so it's time to launch a website. This is a new project that you'll create from scratch. By
+You recently landed an internship with a new startup called PNN, the Puppy News Network. So far, their writers have produced three articles, so it's time to launch a website. This is a new project that you'll create from scratch.
 
 ## Step One: Create the home page
 
-Start by creating a new document, `index.html`, in the root of the project—that is, in the same directory as the `README.md` file:
+Open the `tutorial-student` folder in VS Code by right-clicking on the folder and selecting "Open With Code". Then create a new document, `index.html`, in the root of the project—that is, in the same directory as the `README.md` file:
 
 ```html
 <!DOCTYPE html>
