@@ -1,0 +1,54 @@
+html{
+    background-color: rgb(55, 66, 88);
+    color: whitesmoke ;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+header{
+    text-align: center;
+}
+
+header p{
+    font-size: 1.5em;
+}
+
+h1{
+    font-size: 4em;
+    font-family: "Libre Baskerville", serif;
+}
+
+h2{
+    text-decoration: underline;
+    font-family: "Libre Baskerville", serif;
+}
+
+img{    
+    width: 100%;
+    height: auto;    
+}
+
+.quotes{
+    font-style: italic;
+}
+
+.roles th, td{
+    
+    padding: 10px;
+}
+
+.title{
+font-style: italic;
+}
+
+ .links a{
+     color: whitesmoke;
+ }
+
+ .info-form{
+    background-color: gray;
+
+ }
+
+ .info-form input{
+     margin: 8px;
+ }
