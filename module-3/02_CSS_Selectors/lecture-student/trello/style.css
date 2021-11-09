@@ -22,4 +22,80 @@ html {
   
     /* Do not scroll the background with the page */
     background-attachment: fixed;
+
+    white-space: nowrap;
   }
+
+  .trello-list{
+    width: 300px;
+    background-color: lightgray;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+  }
+  #trello-board .trello-list h2{
+    margin: 0 0 0 5px;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+
+  .cards{
+    padding: 0;
+  }
+
+  .cards li{
+    list-style-type: none;
+    background-color: whitesmoke;
+    margin: 10px;
+    white-space: normal;
+  }
+
+  .trello-list a{
+    text-decoration: none;
+    color: grey;
+    padding-left: 8px;
+  }
+
+  header{
+    position: relative;
+    
+
+  }
+
+  header h1, header p {
+    display: inline;
+    border-right: 1px solid white;
+    color:white;
+    padding-right: 15px;
+    vertical-align: middle;
+    height: 20px
+  }
+
+  header h1{
+    text-transform: uppercase;
+  }
+
+  .labels .label{
+    width: 50px ;
+    height: 12px;
+    display: inline-block;  
+    border-radius: 25px;  
+  }
+
+  .label.general{
+    background-color: yellow;
+  }
+
+  .label.pathway{
+    background-color: green;
+  }
+
+  .label.individual{
+    background-color: blue;
+  }
+
+  .label.pair{
+    background-color: fuchsia;
+  }
+
+  
