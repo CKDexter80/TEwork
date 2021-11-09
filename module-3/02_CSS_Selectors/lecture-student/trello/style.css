@@ -1,0 +1,25 @@
+html {
+    height: 100%;
+  
+    /* Define the default element size to be 16px */
+    font-size: 16px;
+  }
+  
+  * {
+    /* Indicate that the width of the box should include padding and border */
+    box-sizing: border-box;
+  }
+
+  body {
+    /* Change the default page font */
+    font-family: 'Raleway', sans-serif;
+  
+    /* Gradient Background Image */
+    background-image: linear-gradient(to bottom, #858c90, #bbb);
+  
+    /* Do not repeat the background, stretch it */
+    background-repeat: no-repeat;
+  
+    /* Do not scroll the background with the page */
+    background-attachment: fixed;
+  }
