@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+  
+    /* Define the default element size to be 16px */
+    font-size: 16px;
+  }
+  
+  * {
+    /* Indicate that the width of the box should include padding and border */
+    box-sizing: border-box;
+  }
+
+  body {
+    /* Change the default page font */
+    font-family: 'Raleway', sans-serif;
+  
+    /* Gradient Background Image */
+    background-image: linear-gradient(to bottom, #858c90, #bbb);
+  
+    /* Do not repeat the background, stretch it */
+    background-repeat: no-repeat;
+  
+    /* Do not scroll the background with the page */
+    background-attachment: fixed;
+
+    white-space: nowrap;
+  }
+
+  #trello-board{
+    margin-top: 50px;
+  }
+
+  .trello-list{
+    width: 300px;
+    background-color: lightgrey;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+  }
+
+  #trello-board .trello-list h2{
+    margin: 0 0 0 5px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .cards{
+    padding:0;
+  }
+
+  .cards li{
+    list-style-type: none;
+    background-color: whitesmoke;
+    margin:10px;
+    white-space: normal;
+  }
+
+  .trello-list a{
+    text-decoration:none;
+    color:grey;
+    padding-left: 8px;
+  }
+
+  header{
+    position: fixed;
+    top:0;
+
+  }
+
+  header h1, header p {
+    display: inline;
+    color: white;
+    border-right: 1px solid white;
+    padding-right: 15px;
+    vertical-align: middle;
+    height: 20px;
+  }
+  header > h1{
+    text-transform: uppercase;
+  }
+
+  .labels .label{
+    width: 40px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 25px;
+  }
+
+  .label.general{
+    background-color: yellow;
+  }
+
+  .label.pathway{
+    background-color: green;
+  }
+  .label.individual{
+    background-color: blue;
+  }
+  .label.pair{
+    background-color:fuchsia;
+  }
