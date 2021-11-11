@@ -1,0 +1,29 @@
+body,
+#hero footer,
+#featured section,
+#featured section article div,
+#all-items section,
+#all-items section article {
+  display: flex;
+}
+
+body,
+#all-items > section{
+  flex-direction: column;
+}
+
+body{
+  align-items: center;
+}
+
+#featured > section > article > div{
+  justify-content: center;
+}
+
+#all-items > section > article:last-child{
+  flex-direction: row-reverse;
+}
+
+#all-items > section > article div:first-child{
+  align-self: center;
+}
