@@ -22,9 +22,8 @@ ul.social-icons {
   justify-content: space-between;
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
+nav { 
+ flex-grow: 1;
 }
 
 #right-panel {
