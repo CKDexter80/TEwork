@@ -1,0 +1,8 @@
+body,
+#hero footer,
+#featured section,
+#featured section article div,
+#all-items section,
+#all-items section article {
+  display: flex;
+}
