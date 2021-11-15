@@ -12,6 +12,39 @@
         iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
 */
 
+    function iqTest(string)
+    {
+        const numbers = string.split(" ");
+        const odds = [];
+        const evens = [];
+        
+        for (let i = 0; i < numbers.length; i++)
+        {          
+            if (parseInt(numbers[i]) % 2 === 0)
+            {
+                evens.push(numbers[i]);
+            }
+            else
+            {
+                odds.push(numbers[i]);
+            }
+            
+        }
+        
+        if (evens[0] === "" || odds[0] === "")
+        {
+            return 0;
+        }
+        else if (evens.length > odds.length)
+        {
+            return numbers.indexOf(odds[0]) + 1;
+        }
+        else
+        {
+            return numbers.indexOf(evens[0]) + 1;
+        }
+    }
+
 /*
 2. **titleCase** Write a function that will convert a string into title case, given an optional 
     list of exceptions (minor words). The list of minor words will be given as a string with each 
@@ -28,3 +61,34 @@ argument is unused.
 		titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
         titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
+function wordToTitleCase (word)
+{
+    const holder = word.split("");
+    holder[0] = holder[0].toUpperCase();
+    return holder.join("");
+}
+function titleCase (string, exceptions)
+{
+    let titleCaseString = "";
+    const splitString = string.toLowerCase().split(" ");
+    
+    let splitExceptions = "";
+    if (exceptions !== undefined)
+    {
+        splitExceptions = exceptions.toLowerCase().split(" ");
+    }  
+    
+
+    splitString[0] = wordToTitleCase(splitString[0]);
+
+    for (let i = 1; i < splitString.length; i++)
+    {
+        if (!splitExceptions.includes(splitString[i]))
+        {
+            splitString[i] = wordToTitleCase(splitString[i]);
+        }
+
+    }
+    
+    return splitString.join(" ");
+}
