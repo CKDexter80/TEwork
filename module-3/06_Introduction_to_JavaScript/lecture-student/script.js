@@ -10,8 +10,15 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const numberOfDaysInAWeek = 7;
   // Declares a variable those value can be changed
+  let currentDay = "Monday";
   // Declares a variable that will always be an array
+  const daysOfWeek = ["Monday", "Tuesday", "Wednesday"];
+
+  console.log(currentDay);
+
+  console.log(daysOfWeek);
 }
 
 /**
@@ -74,10 +81,18 @@ function objects() {
   };
 
   // Log the object
-
+  console.log(person);
   // Log the first and last name
-
+  console.log(`${person.firstName} ${person.lastName}`);
   // Log each employee
+  for (let i = 0; i < person.employees.length; i ++) {
+    console.log(person.employees[i]);
+
+  }
+
+  for (const employee of person.employees ) {
+    console.log(employee);
+  }
 }
 
 /*
