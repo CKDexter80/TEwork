@@ -20,6 +20,18 @@
  * @returns {boolean} true if they are admitted
  */
 
+    function isAdmitted (gpa, satScore = 0, recommendation = false){
+        if (gpa > 4.0 || satScore > 1300){
+            return true;
+        }
+        else if (recommendation){
+            if (gpa > 3.0 || satScore > 1200){
+                return true;
+            }
+        }
+        return false;
+ }
+
 /**
  * Write a function called useParameterToFilterArray that takes a function and uses that in the 
  *`unfilteredArray` filter function. Return the result.
@@ -27,7 +39,9 @@
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
  */
-let unfilteredArray = [1, 2, 3, 4, 5, 6];
+    let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+    const useParameterToFilterArray = filterFunction => unfilteredArray.filter(filterFunction);
 
 /**
  * Write a function called makeNumber that takes two strings
@@ -42,6 +56,8 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the resultant number
  */
 
+    const makeNumber = (first, second = '') => parseInt(first + second);
+
 /**
  * Write a function called addAll that takes an unknown number of parameters
  * and adds all of them together. Return the sum.
@@ -49,12 +65,41 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+    
+    function addAll(){
+        if (arguments.length === 0)
+        {
+            return 0;
+        } 
+        else 
+        {
+        const reduceArr = Array.from(arguments);
+       
+        return reduceArr.reduce(
+            (reducer, num) => {return reducer + num;}
+        );
+        }
+    }
 
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+/**
+ * Takes an array of strings and prepends 'Happy ' to each item.
+ * 
+ * @param {string[]} words an array of strings to map
+ * @return {string[]} an array of strings
+ */    
+
+    function makeHappy(words) {
+
+        const happyMap = word => 'Happy ' + word;
+        const happyWords = words.map(happyMap);
+
+        return happyWords;
+ }
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -74,12 +119,48 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * Use `map` and an anonymous function.
  */
 
+ /**
+  * Takes an array of JSON objects and maps their properties into
+  * a readable address format.
+  * 
+  * @param {object[]} objectsToMap an array of JSON objects to be mapped into an address format
+  * @return {string[]} an array of strings converted to an address format
+  */
+
+    function getFullAddressesOfProperties(objectsToMap){
+        
+        const addressMap = obj => `${obj.streetNumber} ${obj.streetName} ${obj.streetType} ${obj.city} ${obj.state} ${obj.zip}`
+        const convertedtoAddress = objectsToMap.map(addressMap);
+
+        return convertedtoAddress;
+    }
+
 /*
  * Write and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
  * It must work for strings and numbers.
  */
+
+ /**
+  * Takes an array and returns the largest item.  For an array of strings, it will return the string latest in the
+  * alphabet; for an array of numbers, it will return the largest number;
+  * @param {string[] | number[]} items an array of strings or number to be evaluated
+  * @returns {string | number} the largest item in array
+  */
+    function findLargest(items) {
+        let largestItem = "";
+
+        const evaluateLargest = item => {
+            if (item > largestItem){
+                largestItem = item;
+            }
+        };
+
+        items.forEach(evaluateLargest);
+
+        return largestItem;        
+    }
 
 /*
  * CHALLENGE
@@ -98,3 +179,25 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *
  * Read the tests to verify you have the correct behavior.
  */
+
+ /**
+  * This function takes an array of arrays of numbers and returns the sum of every sub value.
+  * 
+  * @param {array[number[]]} collectionOfArrays an array of an array of numbers
+  * @return {number}
+  */
+
+ function getSumOfSubArrayValues(collectionOfArrays) {
+
+    if (arguments.length === 0){
+        return 0;
+    }
+
+    return collectionOfArrays.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.reduce(
+            (previous, current) => previous + current
+        ), 0
+    )
+
+
+ }
