@@ -76,7 +76,7 @@
         const reduceArr = Array.from(arguments);
        
         return reduceArr.reduce(
-            (reducer, num) => {return reducer + num;}
+            (reducer, num) => reducer + num
         );
         }
     }
@@ -194,7 +194,7 @@
     }
 
     return collectionOfArrays.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.reduce(
+        (previousValue, currentValue) =>  previousValue + currentValue.reduce(
             (previous, current) => previous + current
         ), 0
     )
