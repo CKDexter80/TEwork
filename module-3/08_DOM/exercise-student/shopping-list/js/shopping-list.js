@@ -51,16 +51,21 @@ function markCompleted() {
   const listItems = document.getElementById("groceries").children;
 
   Array.from(listItems).forEach(element => {
-    
-    element.setAttribute("class", "completed")
 
-    console.log(element);
+    element.setAttribute("class", "completed")
 
   });
 
-  console.log(listItems);
 
-}
+  // const listItems = document.querySelectorAll('li');
+   
+  // listItems.forEach(element => {
+    
+  //   element.setAttribute("class", "completed")
+
+  // });
+
+  }
 
 setPageTitle();
 
