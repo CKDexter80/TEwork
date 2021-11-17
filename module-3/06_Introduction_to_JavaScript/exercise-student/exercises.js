@@ -26,11 +26,6 @@
 			}
 		}
 
-function sumDouble(x, y) {
-	// do logic here
-	// return result;
-	return x + y;
-}
 
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
@@ -42,26 +37,29 @@ function sumDouble(x, y) {
 */
 		function isTeen(num)
 		{
-			if (num >= 13 && num <= 19)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			// if (num >= 13 && num <= 19)
+			// {
+			// 	return true;
+			// }
+			// else
+			// {
+			// 	return false;
+			// }
+			return (num >= 13 && num <= 19)
 		}
 
 		function hasTeen(x, y, z)
 		{
-			if (isTeen(x) || isTeen(y) || isTeen(z))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			// if (isTeen(x) || isTeen(y) || isTeen(z))
+			// {
+			// 	return true;
+			// }
+			// else
+			// {
+			// 	return false;
+			// }
+
+			return (isTeen(x) || isTeen(y) || isTeen(z))
 
 		}
 
@@ -76,14 +74,16 @@ function sumDouble(x, y) {
 
 		function lastDigit (x, y)
 		{			
-			if (x % 10 === y % 10)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			// if (x % 10 === y % 10)
+			// {
+			// 	return true;
+			// }
+			// else
+			// {
+			// 	return false;
+			// }
+
+			return (x % 10 === y % 10);
 		}
 
 /*
@@ -147,14 +147,16 @@ function sumDouble(x, y) {
 		{
 			const firstTwoLetters = str.substr(0, 2);
 	
-			if (str.endsWith(firstTwoLetters))
-			{
-				return true;
-			}
-			else 
-			{
-				return false;
-			}
+			// if (str.endsWith(firstTwoLetters))
+			// {
+			// 	return true;
+			// }
+			// else 
+			// {
+			// 	return false;
+			// }
+
+			return (str.endsWith(firstTwoLetters));
 		}
 
 /*
@@ -171,14 +173,16 @@ or false otherwise.
 
 		function cigarParty(cigars, isWeekend)
 		{
-			if (isWeekend && cigars >= 40 || !isWeekend && cigars >= 40 && cigars <= 60)
-			{
-				return true
-			}
-			else
-			{
-				return false;
-			}
+			// if (isWeekend && cigars >= 40 || !isWeekend && cigars >= 40 && cigars <= 60)
+			// {
+			// 	return true
+			// }
+			// else
+			// {
+			// 	return false;
+			// }
+
+			return (isWeekend && cigars >= 40 || !isWeekend && cigars >= 40 && cigars <= 60);
 		}
 
 /*
