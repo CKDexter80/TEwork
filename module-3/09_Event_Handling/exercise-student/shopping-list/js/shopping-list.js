@@ -37,5 +37,72 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+function markItemComplete(item) {
+
+  const circle = item.querySelector("i");
+  item.classList.add("completed");
+  circle.classList.add("completed");
+
+}
+
+function markItemIncomplete(item) {
+
+  const circle = item.querySelector("i");
+  item.classList.remove("completed");
+  circle.classList.remove("completed");
+
+}
+
+
+
+document.addEventListener('DOMContentLoaded',
+  () => {
+    setPageTitle();
+    displayGroceries();
+
+    const listItem = document.querySelector("ul");
+
+    listItem.addEventListener("click",
+      (event) => {
+        if (!event.target.classList.contains("completed")) {
+          markItemComplete(event.target);
+          console.log("did it");
+        }        
+      }
+    )
+
+    listItem.addEventListener("dblclick",
+      (event) => {
+        if (event.target.classList.contains("completed")) {
+          markItemIncomplete(event.target)
+          console.log("did it");
+        }        
+        
+      }
+    )
+
+    const allButton = document.getElementById("toggleAll");
+
+    allButton.addEventListener("click",
+      (event) => {
+        if (allItemsIncomplete) {
+          allItemsIncomplete = false;         
+
+          for (let index = 0; index < listItem.children.length; index++) {
+            markItemComplete(listItem.children[index]);            
+          }
+          allButton.innerText = "Mark All Incomplete";
+        }
+        else {
+          allItemsIncomplete = true;
+          for (let index = 0; index < listItem.children.length; index++) {
+            markItemIncomplete(listItem.children[index]);            
+          }
+          allButton.innerText = "Mark All Complete";
+        }
+       
+      }
+    )
+
+  }
+)
