@@ -58,13 +58,57 @@ function displayReview(review) {
 }
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
+document.addEventListener("DOMContentLoaded",
+  () => {
+    // Set the product reviews page title.
+    setPageTitle();
+    // Set the product reviews page description.
+    setPageDescription();
+    // Display all of the product reviews on our page.
+    displayReviews();
 
-// Set the product reviews page title.
-setPageTitle();
-// Set the product reviews page description.
-setPageDescription();
-// Display all of the product reviews on our page.
-displayReviews();
+    const description = document.querySelector(".description");
+    description.addEventListener("click",
+      (event) => {
+        //console.log(e.target)
+        toggleDescriptionEdit(event.target);
+      }
+    )
+
+    const input = document.getElementById("inputDesc");
+    input.addEventListener('keyup',
+      (e) => {
+        //console.log(e);
+
+        if (e.key === "Enter") {
+          exitDescriptionEdit(input, true)
+        }
+
+        if (e.key === "Escape") {
+          exitDescriptionEdit(input, false)
+        }
+      }
+    )
+
+    const addReviewButton = document.getElementById("btnToggleForm");
+    addReviewButton.addEventListener("click",
+      (e) => {
+        //console.log(e);
+        showHideForm();
+      }
+    )
+
+    const save = document.getElementById("btnSaveReview");
+    save.addEventListener("click",
+      (event) => {
+        event.preventDefault();
+        saveReview();
+      }
+    )
+
+  }
+)
+
 
 /**
  * Hide the description and show the text box.
@@ -130,4 +174,20 @@ function resetFormValues() {
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() {}
+function saveReview() { 
+  //console.log("save")
+  const name = document.getElementById("name");
+  const title = document.getElementById("title");
+  const review = document.getElementById("review");
+  const rating = document.getElementById("rating");
+
+  const newReview = {
+    reviewer: name.value,
+    title: title.value,
+    review: review.value,
+    rating: rating.value
+  }
+
+  displayReview(newReview);
+
+}
