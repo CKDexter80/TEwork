@@ -1,0 +1,29 @@
+1) What commands are needed to run the product-reviews app?
+
+
+2) What is this code doing?
+	{{ numberOfOneStarReviews === 1 ? "" : "s" }}
+
+
+3) Why is the <form> not visible when the app is running?
+
+
+4) Without changing any code, can you make the <form> visible in the browser?
+
+
+5) What data structure is the data function's review property? (hint: an ___ of ___)
+
+
+6) Is there an opportunity to re-factor non-DRY code in the computed block?
+
+
+7) What does this code do: .toFixed(2) ?
+
+
+8 a) Explain how this reduce is working:
+	this.reviews.reduce((currentCount, review) => {
+        	return currentCount + (review.rating === 1);
+      	}, 0);
+
+
+8 b)In your opinion, is this a good approach?
