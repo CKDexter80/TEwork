@@ -1,7 +1,12 @@
 <template>
   <div class="todo-list">
     <h1>My Daily Routine</h1>
-    <input class="filter" type="text" v-model="filterText" placeholder="Filter Todos" />
+    <input
+      class="filter"
+      type="text"
+      v-model="filterText"
+      placeholder="Filter Todos"
+    />
     <ul>
       <li
         v-for="todo in filteredTodos"
@@ -10,8 +15,14 @@
       >
         <input type="checkbox" v-model="todo.done" />
         {{ todo.name }}
+        <span class="delete" v-on:click="deleteTodo(todo)">×</span>
       </li>
     </ul>
+
+    <form v-on:submit.prevent="createTodo">
+      <input type="text" v-model="newItem" placeholder="Add new Todo" />
+      <button type="submit" class="btn save">Save</button>
+    </form>
   </div>
 </template>
 
@@ -20,37 +31,52 @@ export default {
   data() {
     return {
       filterText: "",
+      newItem: "",
       todos: [
         {
           name: "Wake up",
-          done: false
+          done: false,
         },
         {
           name: "5 Minute Morning Movement",
-          done: false
+          done: false,
         },
         {
           name: "Meditate",
-          done: false
+          done: false,
         },
         {
           name: "Brush Teeth",
-          done: false
+          done: false,
         },
         {
           name: "Shower",
-          done: false
-        }
-      ]
+          done: false,
+        },
+      ],
     };
+  },
+  methods: {
+    deleteTodo(todoToDelete) {
+      this.todos = this.todos.filter((todo) => {
+        return todo !== todoToDelete;
+      });
+    },
+    createTodo() {
+      this.todos.push({
+        name: this.newItem,
+        done: false,
+      });
+      this.newItem = "";
+    },
   },
   computed: {
     filteredTodos() {
       return this.todos.filter((todo) => {
         return todo.name.includes(this.filterText);
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -108,5 +134,10 @@ form input {
 }
 form .btn.save {
   font-size: 1em;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
 }
 </style>
