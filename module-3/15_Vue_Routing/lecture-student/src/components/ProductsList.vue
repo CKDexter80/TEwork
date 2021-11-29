@@ -12,6 +12,11 @@
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.reviews.length }}</td>
+        <td>
+          <router-link 
+          v-bind:to="{name:'product-detail', params:{id: product.id}}" 
+          >{{product.id}}</router-link>
+        </td>
       </tr>
     </tbody>
   </table>
