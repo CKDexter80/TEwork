@@ -1,19 +1,26 @@
 1) What command installs Vue dependencies?
-
+	npm install
 2) What command will start the Vue server?
-
+	npm run serve
 3) Where is the json data coming from? 
+	json server localhost
 	a) What is the url?
+	http://localhost:3000
 	b) What tool(s) would you use to inspect json/APIs data
-
+	devtools
+	Postman
 4) What is "created()" in a Vue component?
-
+	lifecycle hook called when component is first created in browser
 5) Where are the HTTP request methods located?
-
+	services/BoardServices.js
 6) What views & components are used on
 	http://localhost:8080/
 
+	App.vue, Home.vue, BoardsList.vue
+
 7) How is the 'loading' gif shown/hidden?
+	loading.gif is shown when isLoading is true; it is made false once the component is created()
 
 8) What is this line doing in router.js
 	    path: '/board/:boardID/card/:cardID',
+	return a card based on specific boardId parameter and CardId parameter
