@@ -35,10 +35,19 @@ export default {
     saveDocument() {}
   },
   created() {
-    docsService.get(this.$route.params.id).then(response => {
+  docsService
+    .get(this.$route.params.id)
+    .then(response => {
       this.$store.commit("SET_ACTIVE_DOCUMENT", response.data);
+    })
+    .catch(error => {
+      if (error.response.status === 404) {
+        this.$router.push("/404");
+      } else {
+        console.error(error);
+      }
     });
-  }
+}
 };
 </script>
 
