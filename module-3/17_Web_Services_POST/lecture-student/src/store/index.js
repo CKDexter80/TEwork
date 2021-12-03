@@ -18,6 +18,9 @@ export default new Vuex.Store({
     SET_BOARDS(state, data) {
       state.boards = data;
     },
+    ADD_BOARD(state, data){
+      state.boards.push(data);
+    },
     SET_BOARD_CARDS(state, data) {
       state.boardCards = data;
     },

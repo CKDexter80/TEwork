@@ -59,7 +59,15 @@ export default {
       });
     },
     saveNewBoard() {
-
+        boardsService.addBoard(this.newBoard).then(
+          response => {
+            if (response.status === 201) {
+              this.showAddBoard = false;
+              this.newBoard.id = response.data.id;
+              this.$store.commit('ADD_BOARD', this.newBoard);
+            }
+          }
+        )
     },
     randomBackgroundColor() {
       return "#" + this.generateHexCode();

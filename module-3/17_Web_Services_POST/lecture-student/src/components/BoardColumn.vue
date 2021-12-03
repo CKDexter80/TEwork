@@ -10,7 +10,7 @@
       >
         <div class="header">
           <h3>{{ card.title }}</h3>
-          <img :src="card.avatar" class="avatar" />
+          <!-- <img :src="card.avatar" class="avatar" /> -->
         </div>
         <div class="footer">
           <span class="date">{{ card.date }}</span>
