@@ -11,10 +11,20 @@
 </template>
 
 <script>
+import TopicsService from '@/services/TopicsService';
+
 export default {
   name: 'topic-details',
   props: {
     'topicId': Number
+  },
+  created() {
+    TopicsService.getTopic(this.topicId).then((response) => {
+      this.topic.id = response.data.id;
+      this.topic.title = response.data.title;
+      this.topic.messages = response.data.messages;
+      
+    });
   },
   data() {
     return {
