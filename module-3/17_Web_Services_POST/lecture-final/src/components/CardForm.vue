@@ -110,7 +110,7 @@ export default {
       } else {
         this.errorMsg =
           "Error " + verb + " card. Request could not be created.";
-      }
+      }   
     }
   },
   created() {
